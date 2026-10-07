@@ -24,7 +24,7 @@ nav.main{display:flex;gap:4px}nav.main a{text-decoration:none;color:var(--ink);p
 .hero{padding:48px 0 28px}.hero h1{max-width:24ch}.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:52ch}
 .tasks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:8px 0 8px}
 .task{display:grid;gap:8px;justify-items:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);font-weight:600;min-height:92px;transition:transform .12s,box-shadow .12s}.task:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,90,60,.10)}
-.task svg{width:24px;height:24px;color:var(--green)}.task small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.task svg{width:24px;height:24px;color:var(--green)}.task small{display:block;font-weight:400;color:var(--muted);font-size:.85rem;overflow-wrap:anywhere}@media(max-width:760px){.hero h1 br{display:none}}
 section{padding:28px 0}section h2{margin-bottom:14px}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
@@ -55,7 +55,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <div class="hero"><h1>Everything a Thornhill family<br>needs, in one place.</h1>
 <p class="lead">Report an absence, see what is happening this week, find the right app, and meet the parents who run the PFC.</p></div>
 <div class="tasks">
-<a class="task" href="mailto:attendance@thornhillschool.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Report an absence<small>attendance@thornhillschool.org</small></span></a>
+<a class="task" href="mailto:attendance@thornhillschool.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Report an absence<small>Email the office in one tap</small></span></a>
 <a class="task" href="https://thornhill.ousd.org/calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>School calendar<small>Subscribe once, never miss a minimum day</small></span></a>
 <a class="task" href="apps.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Which app do I use?<small>ParentSquare, Konstella, Aeries, newsletter</small></span></a>
 <a class="task" href="https://thornhill.ousd.org/resources/stay-connected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M8 8h6M8 12h6M8 16h4"/></svg><span>This week's newsletter<small>Every Tuesday by email</small></span></a>
