@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home | Thornhill PFC</title>
+<meta name="description" content="Proof of concept: a parent-first website for Thornhill Elementary families.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1E5A3C;--deep:#123A27;--cream:#FAF6EE;--paper:#FFFFFF;--ink:#1B1A17;--muted:#5E5C56;--line:#E4DCCB;--amber:#C9791A;--sage:#DCE8DF;--focus:#1E5A3C}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.1rem)}h2{font-size:clamp(1.5rem,3vw,2rem)}h3{font-size:1.15rem;font-family:Inter,system-ui,sans-serif;font-weight:650}
+p{margin:0 0 1em}a{color:var(--green)}a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;border-radius:6px;z-index:99}.skip:focus{left:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.poc{background:var(--deep);color:#F2EEE3;font-size:.85rem;padding:8px 0}.poc .wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}.poc a{color:#F2EEE3}
+header.top{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-family:Fraunces,serif;font-size:1.2rem}
+.brand .mark{width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:1rem;font-family:Fraunces,serif}
+nav.main{display:flex;gap:4px}nav.main a{text-decoration:none;color:var(--ink);padding:8px 12px;border-radius:8px;font-weight:500}nav.main a[aria-current]{background:var(--sage);color:var(--deep)}nav.main a:hover{background:var(--cream)}
+@media(max-width:760px){nav.main{display:none}}
+.tabbar{display:none}@media(max-width:760px){.tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--line);z-index:50;padding:6px 0 max(8px,env(safe-area-inset-bottom))}.tabbar a{text-decoration:none;color:var(--muted);font-size:.78rem;text-align:center;padding:6px 2px;display:grid;gap:3px;justify-items:center}.tabbar a[aria-current]{color:var(--deep);font-weight:650}.tabbar svg{width:22px;height:22px}body{padding-bottom:72px}}
+.hero{padding:48px 0 28px}.hero h1{max-width:18ch}.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:52ch}
+.tasks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:8px 0 8px}
+.task{display:grid;gap:8px;justify-items:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink);font-weight:600;min-height:92px;transition:transform .12s,box-shadow .12s}.task:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,90,60,.10)}
+.task svg{width:24px;height:24px;color:var(--green)}.task small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+section{padding:28px 0}section h2{margin-bottom:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin-bottom:6px}.card ul{margin:8px 0 0;padding-left:0;list-style:none}.card li{padding:6px 0;border-top:1px solid var(--line)}.card li:first-child{border-top:0}
+.rule{border-left:3px solid var(--amber);padding-left:14px;color:var(--muted)}
+.events{display:grid;gap:0;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}.ev{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}.ev:first-child{border-top:0}.ev .d{font-weight:650;color:var(--deep)}.ev .t{color:var(--muted);font-size:.9rem}
+.news li{padding:8px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.news li:first-child{border-top:0}.news{list-style:none;padding:0;margin:0}.news span{color:var(--muted);white-space:nowrap}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:600}.btn.ghost{background:transparent;color:var(--deep);border:1.5px solid var(--green)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.filters button{border:1.5px solid var(--line);background:var(--paper);padding:8px 14px;border-radius:999px;font:inherit;font-size:.92rem;cursor:pointer}.filters button[aria-pressed=true]{background:var(--deep);color:#fff;border-color:var(--deep)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.person{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--sage);color:var(--deep);display:grid;place-items:center;font-family:Fraunces,serif;font-weight:600;font-size:1.2rem}
+.person.open .avatar{background:#F6E7CF;color:var(--amber)}.person .role{font-size:.85rem;color:var(--green);font-weight:650;text-transform:uppercase;letter-spacing:.04em}.person .name{font-weight:650;font-size:1.05rem}.person p{font-size:.92rem;color:var(--muted);margin:6px 0 8px}.person a{font-size:.9rem}
+.group{margin:34px 0 10px}
+table.apps{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.95rem}
+table.apps th,table.apps td{text-align:left;vertical-align:top;padding:14px 16px;border-top:1px solid var(--line)}table.apps th{background:var(--sage);color:var(--deep);font-weight:650;border-top:0}table.apps td:first-child{font-weight:650;white-space:nowrap}
+@media(max-width:760px){table.apps thead{display:none}table.apps tr{display:block;border-top:8px solid var(--cream)}table.apps td{display:block;border-top:0;padding:8px 16px}table.apps td:first-child{padding-top:16px;font-size:1.05rem;color:var(--deep)}table.apps td[data-l]::before{content:attr(data-l);display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:2px}table.apps td:last-child{padding-bottom:16px}}
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0 18px;margin:0 0 10px}summary{cursor:pointer;font-weight:650;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--green);font-weight:400;font-size:1.3rem}details[open] summary::after{content:"\2212"}details p{padding-bottom:14px;margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem}footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}footer a{color:var(--deep)}
+.search{display:flex;gap:8px;margin:0 0 10px}.search input{flex:1;font:inherit;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper)}
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<div class="poc"><div class="wrap"><span>Proof of concept for the PFC board. Built from the live site's content on October 7, 2026. Not the official site.</span><a href="https://thornhill.ousd.org">Official site: thornhill.ousd.org</a></div></div>
+<header class="top"><div class="wrap"><a class="brand" href="index.html"><span class="mark">T</span>Thornhill Families</a>
+<nav class="main" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="apps.html">Apps and logins</a><a href="board.html">Meet the board</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main id="main">
+<div class="wrap">
+<div class="hero"><h1>Everything a Thornhill family needs, in one place.</h1>
+<p class="lead">Report an absence, see what is happening this week, find the right app, and meet the parents who run the PFC.</p></div>
+<div class="tasks">
+<a class="task" href="mailto:attendance@thornhillschool.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Report an absence<small>attendance@thornhillschool.org</small></span></a>
+<a class="task" href="https://thornhill.ousd.org/calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>School calendar<small>Subscribe once, never miss a minimum day</small></span></a>
+<a class="task" href="apps.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Which app do I use?<small>ParentSquare, Konstella, Aeries, newsletter</small></span></a>
+<a class="task" href="https://thornhill.ousd.org/resources/stay-connected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M8 8h6M8 12h6M8 16h4"/></svg><span>This week's newsletter<small>Every Tuesday by email</small></span></a>
+<a class="task" href="board.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5a5 5 0 0 1 6 5"/></svg><span>Meet the board<small>Who does what, and how to reach them</small></span></a>
+<a class="task" href="https://thornhill.ousd.org/fundraising/annual-fund"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 13h18M12 8c-2-4-6-4-6-1s4 1 6 1zm0 0c2-4 6-4 6-1s-4 1-6 1z"/></svg><span>Give to the Annual Fund<small>The year's biggest fundraiser</small></span></a>
+<a class="task" href="https://thornhill.ousd.org/resources/volunteer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg><span>Volunteer<small>Badges, room parents, events</small></span></a>
+<a class="task" href="apps.html#faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7M12 17h.01"/></svg><span>Common questions<small>Invites, grades, submissions</small></span></a>
+</div>
+</div>
+
+<section><div class="wrap"><h2>Start with who you are</h2>
+<div class="grid3">
+<div class="card"><h3>New to Thornhill</h3><p class="rule">Three set-ups and you are connected.</p><ul>
+<li><a href="apps.html#ParentSquare">Make sure ParentSquare reaches you</a></li><li><a href="apps.html#Konstella">Accept your Konstella invitation</a></li><li><a href="https://thornhill.ousd.org/calendar">Subscribe to the school calendar</a></li><li><a href="https://thornhill.ousd.org/resources/parking-traffic-flow">Learn drop-off and pickup</a></li></ul></div>
+<div class="card"><h3>Current family</h3><p class="rule">The week-to-week essentials.</p><ul>
+<li><a href="mailto:attendance@thornhillschool.org">Report an absence</a></li><li><a href="https://thornhill.ousd.org/resources/stay-connected">Read this week's newsletter</a></li><li><a href="https://thornhill.ousd.org/resources/before-after-school-care">Before and after school care</a></li><li><a href="apps.html#Aeries">Check grades in Aeries</a></li></ul></div>
+<div class="card"><h3>Want to help</h3><p class="rule">The PFC is parents like you.</p><ul>
+<li><a href="https://thornhill.ousd.org/fundraising/annual-fund">Give to the Annual Fund</a></li><li><a href="https://thornhill.ousd.org/resources/volunteer">Get a volunteer badge</a></li><li><a href="board.html#open">Fill an open board role</a></li><li><a href="https://thornhill.ousd.org/fundraising/shop-earn">Shop and earn for Thornhill</a></li></ul></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="grid3">
+<div><h2>This week</h2><div class="events"><div class="ev"><div class="d">Wed, Oct 7</div><div>Minimum Day (every Wednesday)<div class="t">All day</div></div></div><div class="ev"><div class="d">Wed, Oct 7</div><div>Coffee with the Principal<div class="t">8:30 to 9:15 AM</div></div></div><div class="ev"><div class="d">Mon, Oct 12</div><div>Indigenous Peoples' Day, no school<div class="t">All day</div></div></div></div><p style="margin-top:12px"><a class="btn ghost" href="https://thornhill.ousd.org/calendar">Full calendar</a></p></div>
+<div><h2>Latest from Thornhill</h2><ul class="news"><li><a href="https://thornhill.ousd.org/resources/news">ThornChill Fall Festival: Rooted In Our Community</a><span>Sep 30</span></li><li><a href="https://thornhill.ousd.org/resources/news">Thornhill Annual Fund Drive: Week 3 Update</a><span>Sep 22</span></li><li><a href="https://thornhill.ousd.org/resources/news">Coffee with the Principal: September Recap</a><span>Sep 11</span></li></ul><p style="margin-top:12px"><a class="btn ghost" href="https://thornhill.ousd.org/resources/news">All news</a></p></div>
+<div id="contact"><h2>Who do I contact?</h2><ul class="news">
+<li><span style="white-space:normal">Absences and the office</span><a href="tel:+15108792157">(510) 879-2157</a></li>
+<li><span style="white-space:normal">Konstella invites</span><a href="mailto:vpcommunications@thornhillschool.org">VP Communications</a></li>
+<li><span style="white-space:normal">Newsletter items</span><a href="mailto:newsletter@thornhillschool.org">Newsletter</a></li>
+<li><span style="white-space:normal">Website and calendar</span><a href="mailto:webmaster@thornhillschool.org">Webmaster</a></li>
+<li><span style="white-space:normal">Anything else</span><a href="board.html">Find the right board member</a></li></ul></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">
+<div><strong>Thornhill Elementary School</strong><br>5880 Thornhill Drive, Oakland, CA 94611<br>Office: <a href="tel:+15108792157">(510) 879-2157</a></div>
+<div><strong>Parent Faculty Club</strong><br><a href="board.html">Meet the board</a><br><a href="https://thornhill.ousd.org/pfc">About the PFC</a><br><a href="https://thornhill.ousd.org/fundraising/annual-fund">Annual Fund</a></div>
+<div><strong>Official pages</strong><br><a href="https://thornhill.ousd.org/calendar">Calendar</a><br><a href="https://thornhill.ousd.org/resources/news">News</a><br><a href="https://thornhill.ousd.org/resources/stay-connected">Stay Connected</a></div>
+</div></footer>
+<nav class="tabbar" aria-label="Quick navigation">
+<a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg>Home</a>
+<a href="https://thornhill.ousd.org/calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar</a>
+<a href="apps.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Apps</a>
+<a href="board.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5a5 5 0 0 1 6 5"/></svg>Board</a>
+</nav>
+</body></html>
