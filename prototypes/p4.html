@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plain and fast | Thornhill prototype</title><meta name="description" content="Prototype homepage for Thornhill Elementary families.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box}body{margin:0}img{max-width:100%;display:block}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid currentColor;outline-offset:3px}.skip{position:absolute;left:-999px;top:8px;background:#111;color:#fff;padding:8px 12px;z-index:99}.skip:focus{left:8px}.proto{background:#1f1f1f;color:#f2f2f2;font:15px/1.4 system-ui,sans-serif;padding:8px 0}.proto .wrap{display:flex;gap:12px 20px;flex-wrap:wrap;justify-content:space-between}.proto a{color:#fff;margin-left:14px}:root{--ink:#111;--muted:#666;--line:#e6e6e6;--accent:#05397e;--bg:#fff}
+body{font-family:Inter,system-ui,sans-serif;font-size:18px;line-height:1.65;color:var(--ink);background:var(--bg)}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;gap:12px}.brand{font-weight:600;text-decoration:none;color:var(--ink)}header nav{display:flex;gap:18px}header nav a{color:var(--muted);text-decoration:none;font-size:.95rem}header nav a:hover{color:var(--ink)}
+h1{font-size:clamp(2rem,5vw,2.6rem);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin:40px 0 10px}p.lead{color:var(--muted);font-size:1.1rem;margin:0 0 26px}
+.search{position:relative;margin-bottom:34px}.search input{width:100%;font:inherit;font-size:1.05rem;padding:14px 16px 14px 48px;border:1.5px solid #d4d4d4;border-radius:12px;background:#fff}.search input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(5,57,126,.12)}.search svg{position:absolute;left:16px;top:50%;width:20px;height:20px;margin-top:-10px;color:var(--muted)}
+section{margin:0 0 30px}h2{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+ul{list-style:none;margin:0;padding:0}li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:13px 0;border-top:1px solid var(--line)}li:first-child{border-top:0}li a{color:var(--ink);text-decoration:none;font-weight:500}li a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}li span{color:var(--muted);font-size:.95rem;text-align:right;max-width:55%}
+.empty{display:none;color:var(--muted);padding:20px 0;border-top:1px solid var(--line)}
+footer{margin:60px 0 50px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:20px;line-height:1.8}footer a{color:var(--muted)}
+@media(max-width:480px){li{flex-direction:column;gap:2px}li span{max-width:none;text-align:left}header nav{gap:12px}header nav a{font-size:.85rem}.brand{white-space:nowrap}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><div class="proto"><div class="wrap"><span>Prototype 4 of 4, Plain and fast. Built from the live site's content. Not the official site.</span><span><a href="index.html">All four prototypes</a> <a href="https://thornhill.ousd.org">Official site</a></span></div></div>
+<header class="top"><div class="wrap"><a class="brand" href="https://thornhill.ousd.org">Thornhill Elementary</a><nav aria-label="Main"><a href="https://thornhill.ousd.org/calendar">Calendar</a><a href="https://thornhill.ousd.org/resources/news">News</a><a href="https://thornhill.ousd.org/pfc">PFC</a><a href="https://thornhill.ousd.org/our-school">School</a></nav></div></header>
+<main id="main" class="wrap">
+<h1>Thornhill, for families.</h1><p class="lead">The short list of what parents look for. Type to filter it.</p>
+<div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Try absence, grades, Konstella, picture day" aria-label="Filter this page"></div>
+<section><h2>Do</h2><ul>
+<li data-s="report an absence attendance@thornhillschool.org sick absent"><a href="mailto:attendance@thornhillschool.org">Report an absence</a><span>attendance@thornhillschool.org</span></li>
+<li data-s="subscribe to the school calendar google calendar events dates"><a href="https://thornhill.ousd.org/calendar">Subscribe to the school calendar</a><span>Google Calendar</span></li>
+<li data-s="read this week's newsletter tuesdays, by email tuesday"><a href="https://thornhill.ousd.org/resources/stay-connected">Read this week's newsletter</a><span>Tuesdays, by email</span></li>
+<li data-s="give to the annual fund goal this year $265,000 donate money fundraising"><a href="https://thornhill.ousd.org/fundraising/annual-fund">Give to the Annual Fund</a><span>Goal this year $265,000</span></li>
+<li data-s="volunteer badge, room parent, events help"><a href="https://thornhill.ousd.org/resources/volunteer">Volunteer</a><span>Badge, room parent, events</span></li>
+<li data-s="before and after school care kids' club, jcc east bay aftercare"><a href="https://thornhill.ousd.org/resources/before-after-school-care">Before and after school care</a><span>Kids' Club, JCC East Bay</span></li>
+<li data-s="drop-off and pickup parking and traffic flow quick drop"><a href="https://thornhill.ousd.org/resources/parking-traffic-flow">Drop-off and pickup</a><span>Parking and traffic flow</span></li>
+</ul></section>
+<section><h2>Log in</h2><ul>
+<li data-s="parentsquare official messages from the district, principal scott, and teachers created automatically from the contact info on file. sign in with that email or mobile number."><a href="https://www.parentsquare.com/signin">ParentSquare</a><span>Official messages from the district, Principal Scott, and teachers</span></li><li data-s="konstella family directory, your child's classroom page, volunteer sign-ups, rsvps, and the newsletter archive. one parent per child gets an email invitation each august. missing it? email vpcommunications@thornhillschool.org."><a href="https://www.konstella.com">Konstella</a><span>Family directory, your child's classroom page, volunteer sign-ups, RSVPs, and the newsletter archive.</span></li><li data-s="aeries parent portal grades and the standards-based report card. needs your child's student id and a verification code from the school office."><a href="https://oaklandusd.aeries.net/student">Aeries Parent Portal</a><span>Grades and the standards-based report card.</span></li>
+<li data-s="all apps and common questions which is which, how to get in faq help stuck invite"><a href="https://justdansmith.github.io/thornhill-poc/apps.html">All apps and common questions</a><span>Which is which, how to get in</span></li>
+</ul></section>
+<section><h2>This week</h2><ul>
+<li data-s="minimum day (every wednesday) wed oct 14, all day "><a href="https://thornhill.ousd.org/calendar">Minimum Day (every Wednesday)</a><span>Wed Oct 14, All day</span></li><li data-s="school picture day thu oct 15, all day "><a href="https://thornhill.ousd.org/calendar">School Picture Day</a><span>Thu Oct 15, All day</span></li><li data-s="thornchill fall festival sat oct 17, 11:00 am to 2:00 pm "><a href="https://thornhill.ousd.org/calendar">ThornChill Fall Festival</a><span>Sat Oct 17, 11:00 AM to 2:00 PM</span></li>
+</ul></section>
+<section><h2>News</h2><ul>
+<li data-s="thornchill fall festival: rooted in our community sep 30 "><a href="https://thornhill.ousd.org/resources/news">ThornChill Fall Festival: Rooted In Our Community</a><span>Sep 30</span></li><li data-s="thornhill annual fund drive: week 3 update sep 22 "><a href="https://thornhill.ousd.org/resources/news">Thornhill Annual Fund Drive: Week 3 Update</a><span>Sep 22</span></li><li data-s="coffee with the principal: september recap sep 11 "><a href="https://thornhill.ousd.org/resources/news">Coffee with the Principal: September Recap</a><span>Sep 11</span></li>
+</ul></section>
+<section><h2>People</h2><ul>
+<li data-s="school office (510) 879-2157 absence call front desk"><a href="tel:+15108792157">School office</a><span>(510) 879-2157</span></li>
+<li data-s="pfc presidents, selam brown and jonathan yip president@thornhillschool.org board"><a href="mailto:president@thornhillschool.org">PFC Presidents, Selam Brown and Jonathan Yip</a><span>president@thornhillschool.org</span></li>
+<li data-s="communications and konstella, annie sartor vpcommunications@thornhillschool.org invite"><a href="mailto:vpcommunications@thornhillschool.org">Communications and Konstella, Annie Sartor</a><span>vpcommunications@thornhillschool.org</span></li>
+<li data-s="newsletter, priya aslam items by 8 pm thursday submit"><a href="mailto:newsletter@thornhillschool.org">Newsletter, Priya Aslam</a><span>Items by 8 PM Thursday</span></li>
+<li data-s="everyone on the pfc board roles, open seats, emails volunteer who"><a href="https://justdansmith.github.io/thornhill-poc/board.html">Everyone on the PFC board</a><span>Roles, open seats, emails</span></li>
+</ul></section>
+<p class="empty" id="empty">Nothing on this page matches. The office can help at <a href="tel:+15108792157">(510) 879-2157</a>.</p>
+<footer>Thornhill Elementary School<br>5880 Thornhill Drive, Oakland, CA 94611<br>Official site: <a href="https://thornhill.ousd.org">thornhill.ousd.org</a></footer>
+</main>
+<script>const q=document.getElementById('q'),items=[...document.querySelectorAll('li[data-s]')],secs=[...document.querySelectorAll('main section')],empty=document.getElementById('empty');q.addEventListener('input',()=>{const s=q.value.trim().toLowerCase();let any=0;items.forEach(l=>{const ok=!s||l.dataset.s.includes(s);l.hidden=!ok;if(ok)any++});secs.forEach(x=>x.hidden=![...x.querySelectorAll('li')].some(l=>!l.hidden));empty.style.display=any?'none':'block'});</script>
+</body></html>
