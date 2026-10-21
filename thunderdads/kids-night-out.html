@@ -95,6 +95,27 @@ table.tbl td.n{font-family:Fraunces,serif;color:var(--deep);font-size:1.05rem;wh
 .totals small{color:#BFD3C5;font-size:.85rem}
 ul.src{padding-left:20px;font-size:.92rem}ul.src li{margin:6px 0;overflow-wrap:anywhere}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem;margin-top:20px}footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}footer a{color:var(--deep)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card .rule{margin:14px 0 0}
+.goal{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 32px}
+@media(max-width:700px){.goal{grid-template-columns:1fr;gap:24px;padding:22px}}
+.thermo{display:flex;gap:14px;align-items:flex-start}
+.tcol{display:flex;flex-direction:column;align-items:center}
+.tube{position:relative;width:36px;height:260px;background:#F1EBDD;border:2px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;overflow:hidden}
+.tube .hi,.tube .lo{position:absolute;left:0;right:0;bottom:0;animation:fill 1.4s ease-out both}
+.tube .hi{height:var(--hi);background:repeating-linear-gradient(45deg,rgba(201,121,26,.55) 0 6px,rgba(201,121,26,.18) 6px 12px)}
+.tube .lo{height:var(--lo);background:var(--amber)}
+.bulb{width:60px;height:60px;border-radius:50%;background:var(--amber);border:2px solid #B86C12;margin-top:-6px}
+.scale{height:285px;display:flex;flex-direction:column;justify-content:space-between;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-11px}
+@keyframes fill{from{height:0}}
+@media(prefers-reduced-motion:reduce){.tube .hi,.tube .lo{animation:none}}
+.big-num{font-family:Fraunces,serif;font-size:clamp(2.6rem,6vw,3.6rem);color:var(--deep);line-height:1;margin:4px 0 12px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin:0 0 4px}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--amber)}.legend i.h{background:repeating-linear-gradient(45deg,rgba(201,121,26,.6) 0 3px,rgba(201,121,26,.2) 3px 6px)}
+.feature{border-left:3px solid var(--amber);padding-left:16px;margin-top:20px}.feature b{display:block;font-family:Fraunces,serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:4px}.feature p{color:var(--muted);margin:0}
+.big{--c:var(--deep)}.proj.big{background:#F3F7F4}@media(min-width:760px){.proj.big{grid-column:span 2}}
+.vote{margin-top:16px}.vote fieldset{border:0;padding:0;margin:10px 0 14px;display:grid;gap:8px}
+.vote label{display:flex;gap:10px;align-items:center;background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:500}
+.vote input{accent-color:var(--green);width:18px;height:18px}.vote label:has(input:checked){border-color:var(--green);background:var(--sage)}
 </style></head>
 <body class="plain"><a class="skip" href="#main">Skip to content</a>
 <div class="poc"><div class="wrap"><span>Working notes for the Kids Night Out owner. Draft from October 21, 2026, checked against Givebutter's help center.</span></div></div>
@@ -104,7 +125,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <div class="wrap hero">
 <p class="eyebrow">For the Kids Night Out owner</p>
 <h1>Kids Night Out tickets,<br>sign-in, and pickup</h1>
-<p class="lead">Three changes for the next event: a pay-what-you-can ticket option, a sign-in line that moves, and a pickup log that protects the dads. Everything here is a proposal for you to change.</p>
+<p class="lead">Three changes for the next event: a pay-what-you-can ticket option with a movie vote, a sign-in line that moves, and a pickup log that protects the dads. Everything here is a proposal for you to change.</p>
 <div class="toc"><a href="#tickets">Tickets</a><a href="#calc">What a night brings in</a><a href="#setup">Givebutter setup</a><a href="#door">Sign-in</a><a href="#pickup">Pickup</a><a href="#questions">Questions to settle</a><a href="#sources">Sources</a></div>
 </div>
 
@@ -112,9 +133,9 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <h2>Pay-what-you-can tickets</h2>
 <p class="sub">Givebutter has no ticket where the buyer types their own price. Its help center lists price as a fixed setting on each ticket type: "The price of the ticket, or tick the checkbox if this is a free ticket." It does allow unlimited ticket types and an optional donation step at checkout, and those two cover the idea.</p>
 <table class="tbl"><thead><tr><th>Ticket type</th><th>Price (proposed)</th><th>Why it's there</th></tr></thead><tbody>
-<tr><td data-l="Ticket type"><strong>Pay it forward</strong></td><td class="n" data-l="Price (proposed)">$50</td><td data-l="Why it's there">Covers this kid plus part of a kid whose family can't pay.</td></tr><tr><td data-l="Ticket type"><strong>Standard</strong></td><td class="n" data-l="Price (proposed)">$35</td><td data-l="Why it's there">What Dan paid for a first kid at a recent Kids Night Out.</td></tr><tr><td data-l="Ticket type"><strong>Community</strong></td><td class="n" data-l="Price (proposed)">$20</td><td data-l="Why it's there">For families who want in at a lower price. No questions asked.</td></tr><tr><td data-l="Ticket type"><strong>Pay what you can</strong></td><td class="n" data-l="Price (proposed)">$5</td><td data-l="Why it's there">The floor. Set it once the dads know what a kid costs in pizza and supplies.</td></tr><tr><td data-l="Ticket type"><strong>Volunteer</strong></td><td class="n" data-l="Price (proposed)">Free</td><td data-l="Why it's there">Free for a parent who stays and helps watch the kids (Givebutter's free-ticket checkbox).</td></tr>
+<tr><td data-l="Ticket type"><strong>Pay it forward</strong></td><td class="n" data-l="Price (proposed)">$50</td><td data-l="Why it's there">Covers this kid plus part of a kid whose family can't pay.</td></tr><tr><td data-l="Ticket type"><strong>Standard</strong></td><td class="n" data-l="Price (proposed)">$35</td><td data-l="Why it's there">About what a first kid's ticket cost recently.</td></tr><tr><td data-l="Ticket type"><strong>Community</strong></td><td class="n" data-l="Price (proposed)">$20</td><td data-l="Why it's there">For families who want in at a lower price. No questions asked.</td></tr><tr><td data-l="Ticket type"><strong>Pay what you can</strong></td><td class="n" data-l="Price (proposed)">$5</td><td data-l="Why it's there">The floor. Set it once the dads know what a kid costs in pizza and supplies.</td></tr><tr><td data-l="Ticket type"><strong>Volunteer</strong></td><td class="n" data-l="Price (proposed)">Free</td><td data-l="Why it's there">Free for a parent who stays and helps watch the kids (Givebutter's free-ticket checkbox).</td></tr>
 </tbody></table>
-<p class="rule"><strong>Prices are a proposal.</strong> Dan paid $35 for a first kid and about $30 for a second; Selam remembered $25. Confirm the current price and the cost per kid before setting tiers.</p>
+<p class="rule"><strong>Prices are a proposal.</strong> Recent tickets ran about $35 for a first kid and $30 for a second. Confirm the current price and the cost per kid before setting tiers.</p>
 <div class="two">
 <div class="card"><h3>Keep the checkout donation on</h3><p>Givebutter's checkout "presents tickets first, with the option to add a donation." A family on a low tier can still add a few dollars.</p></div>
 <div class="card"><h3>Optional: a quiet discount code</h3><p>Promo codes can take a percentage or a fixed amount off each ticket and can be limited to specific tickets. A code shared through teachers covers families who'd rather not pick a low tier in public.</p></div>
@@ -145,6 +166,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <ol class="steps">
 <li><div><h3>Add one ticket type per tier</h3><p>Price is fixed per ticket type. Tick the free checkbox for the Volunteer ticket.</p></div></li>
 <li><div><h3>Add required questions to every ticket</h3><p>Ticket custom fields can be text, number, checkbox, option, or file, with a "Required field" toggle and an "Apply to all tickets" setting. Ask for: child's name, grade, allergies or medical notes, and the adults allowed to pick up, with a phone number.</p></div></li>
+<li><div><h3>Add the movie vote</h3><p>An option field with three movies, single select. Custom field answers come through in the ticket export, so the tally takes a minute. Confirm the movie license first (see the questions below).</p></div></li>
 <li><div><h3>Run a free test order with two tickets</h3><p>Givebutter's docs don't say outright that a two-kid order asks the questions once per ticket. A test order settles it before families start buying.</p></div></li>
 <li><div><h3>Export the list the day before</h3><p>The ticket details export includes the custom field answers. Print it by last name as the backup if the app or Wi-Fi fails.</p></div></li>
 </ol>
@@ -179,6 +201,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <li><div><h3>Do parents watching kids count as unsupervised OUSD volunteers?</h3><p>OUSD's unsupervised tier needs fingerprints, a TB clearance, and a signed waiver, and comes with a green badge. Supervised volunteers need an OUSD employee present.</p></div></li>
 <li><div><h3>Who is the responsible adult on record for the evening?</h3></div></li>
 <li><div><h3>Does the PFC's insurance cover Kids Night Out?</h3></div></li>
+<li><div><h3>Does the school or OUSD hold a movie license that covers Kids Night Out?</h3><p>Showing a film outside the home needs a public performance license, even when the event is free, and owning the DVD doesn't count. Swank Movie Licensing USA covers the major studios. Licenses are per school site, and districts sometimes already hold one.</p></div></li>
 </ol>
 </div></section>
 
@@ -192,6 +215,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <li>Givebutter, exporting ticket details: <a href="https://help.givebutter.com/en/articles/5104292-how-to-export-download-ticket-details">https://help.givebutter.com/en/articles/5104292-how-to-export-download-ticket-details</a></li>
 <li>Oakland Ed Fund, volunteer clearance FAQ: <a href="https://www.oaklandedfund.org/programs/volunteer/volunteer-faq/">https://www.oaklandedfund.org/programs/volunteer/volunteer-faq/</a></li>
 <li>Chabot Elementary (OUSD), volunteer tiers: <a href="https://chabot.ousd.org/resources/volunteer-information-and-requirements">https://chabot.ousd.org/resources/volunteer-information-and-requirements</a></li>
+<li>Movie licensing for school and PTA events (Washington State PTA): <a href="https://www.wastatepta.org/swank/">https://www.wastatepta.org/swank/</a></li>
+<li>Movie events at a California district (Fresno Unified): <a href="https://purchasing.fresnounified.org/movie-events/">https://purchasing.fresnounified.org/movie-events/</a></li>
 </ul>
 </div></section>
 </main>

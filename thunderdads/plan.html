@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Thunder Dads ideas and next steps | Draft for Scott</title>
-<meta name="description" content="Notes from Dan Smith for Scott on Thunder Dads: Kids Night Out, fix-it projects, the shade push, a request flow, and a PFC budget.">
+<meta name="description" content="Notes from Dan Smith for Scott on Thunder Dads: a $10,000 goal for the year, the turf project, Kids Night Out, fix-it projects, and a PFC budget.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='12' fill='%23123A27'/%3E%3Cpath d='M13 4 6 14h5l-1 6 7-10h-5z' fill='%23F0B45C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
@@ -95,6 +95,27 @@ table.tbl td.n{font-family:Fraunces,serif;color:var(--deep);font-size:1.05rem;wh
 .totals small{color:#BFD3C5;font-size:.85rem}
 ul.src{padding-left:20px;font-size:.92rem}ul.src li{margin:6px 0;overflow-wrap:anywhere}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem;margin-top:20px}footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}footer a{color:var(--deep)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card .rule{margin:14px 0 0}
+.goal{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 32px}
+@media(max-width:700px){.goal{grid-template-columns:1fr;gap:24px;padding:22px}}
+.thermo{display:flex;gap:14px;align-items:flex-start}
+.tcol{display:flex;flex-direction:column;align-items:center}
+.tube{position:relative;width:36px;height:260px;background:#F1EBDD;border:2px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;overflow:hidden}
+.tube .hi,.tube .lo{position:absolute;left:0;right:0;bottom:0;animation:fill 1.4s ease-out both}
+.tube .hi{height:var(--hi);background:repeating-linear-gradient(45deg,rgba(201,121,26,.55) 0 6px,rgba(201,121,26,.18) 6px 12px)}
+.tube .lo{height:var(--lo);background:var(--amber)}
+.bulb{width:60px;height:60px;border-radius:50%;background:var(--amber);border:2px solid #B86C12;margin-top:-6px}
+.scale{height:285px;display:flex;flex-direction:column;justify-content:space-between;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-11px}
+@keyframes fill{from{height:0}}
+@media(prefers-reduced-motion:reduce){.tube .hi,.tube .lo{animation:none}}
+.big-num{font-family:Fraunces,serif;font-size:clamp(2.6rem,6vw,3.6rem);color:var(--deep);line-height:1;margin:4px 0 12px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin:0 0 4px}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--amber)}.legend i.h{background:repeating-linear-gradient(45deg,rgba(201,121,26,.6) 0 3px,rgba(201,121,26,.2) 3px 6px)}
+.feature{border-left:3px solid var(--amber);padding-left:16px;margin-top:20px}.feature b{display:block;font-family:Fraunces,serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin-bottom:4px}.feature p{color:var(--muted);margin:0}
+.big{--c:var(--deep)}.proj.big{background:#F3F7F4}@media(min-width:760px){.proj.big{grid-column:span 2}}
+.vote{margin-top:16px}.vote fieldset{border:0;padding:0;margin:10px 0 14px;display:grid;gap:8px}
+.vote label{display:flex;gap:10px;align-items:center;background:var(--cream);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:500}
+.vote input{accent-color:var(--green);width:18px;height:18px}.vote label:has(input:checked){border-color:var(--green);background:var(--sage)}
 </style></head>
 <body class="plain"><a class="skip" href="#main">Skip to content</a>
 <div class="poc"><div class="wrap"><span>Working draft for Scott from Dan Smith, October 21, 2026. Not for wider distribution yet.</span></div></div>
@@ -104,40 +125,44 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <div class="wrap hero">
 <p class="eyebrow">For Scott, from Dan Smith &middot; October 21, 2026</p>
 <h1>Thunder Dads ideas<br>and next steps</h1>
-<p class="lead">What we talked about, what I'd suggest, and the decisions in front of us. The site this page sits on is a working draft of the Thunder Dads site idea, so click around.</p>
+<p class="lead">What we talked about, what I'd suggest, and the decisions in front of us. Some of this comes from recent PFC conversations and some from our conversation today. Please correct anything that's off. The rest of this site is a working draft of the Thunder Dads site, so click around.</p>
 <div class="toc"><a href="#now">Where things stand</a><a href="#ideas">Five ideas</a><a href="#budget">Budget</a><a href="#next">Next steps</a><a href="#principal">For the principal</a><a href="#decide">For the dads</a><a href="#sources">Sources</a></div>
 </div>
 
 <section id="now"><div class="wrap">
 <h2>Where things stand</h2>
 <ul class="facts">
-<li>About $3,000 to $4,000 sits in the Thunder Dads account, and this month's Kids Night Out could bring it near $5,000.<span class="src">Selam Brown, PFC co-President, October 13</span></li>
-<li>Principal LaShante Scott has asked the dads for a plan to spend it this school year.<span class="src">Selam Brown, October 13</span></li>
-<li>The PFC spends each year's money that year. Only the auction and the "fund in need" carry over.<span class="src">Selam Brown, October 13 ("fund in need" as heard on the call; likely the auction's Fund-a-Need)</span></li>
-<li>The dads want to decide where their money goes, and Selam asks each month for someone to give a dads update at the PFC.<span class="src">Selam Brown, October 13</span></li>
-<li>Kids Night Out: Dan paid $35 for a first kid and about $30 for a second. Sign-in took 20 to 30 minutes with a long line, and the pizza ran out.<span class="src">Dan; Selam, October 13</span></li>
-<li>Projects on the table: desk and chair repairs, the picket fence, shade or turf for the yard (the dads' priority), and the music teacher's request for folding stage walls at $7,000 to $10,000.<span class="src">Dan, after talking with Scott, October 21</span></li>
+<li>About $3,000 to $4,000 sits in the Thunder Dads account, and this month's Kids Night Out could bring it near $5,000.</li>
+<li>Principal LaShante Scott has asked the dads for a plan to spend it this school year.</li>
+<li>The PFC spends each year's money that year. Only the auction and the "fund in need" (I think that's the auction's Fund-a-Need) carry over.</li>
+<li>The dads want to decide where their money goes, and Selam asks each month for someone to give a dads update at the PFC.</li>
+<li>Kids Night Out: I paid $35 for a first kid and about $30 for a second. Sign-in took 20 to 30 minutes with a long line, and the pizza ran out.</li>
+<li>Goal for the year: $10,000, with the turf area as this year's big project.</li>
+<li>Other projects on the table: desk and chair repairs, the picket fence, shade for the yard, and the music teacher's request for folding stage walls at $7,000 to $10,000.</li>
 </ul>
 </div></section>
 
 <section id="ideas"><div class="wrap">
 <h2>Five ideas</h2>
 
-<div class="idea"><span class="num">01</span><h3>Pay-what-you-can tickets for Kids Night Out</h3>
+<div class="idea"><span class="num">01</span><h3>Pay-what-you-can tickets and a movie vote</h3>
 <p>Givebutter can't let a buyer type their own ticket price, but it allows unlimited ticket types and an optional donation at checkout. A sliding scale of fixed tiers (pay it forward, standard, community, pay what you can, volunteer) gets the same result.</p>
+<p>The movie vote fits on the ticket too: a dropdown question with three movies, tallied from the ticket export. One catch: showing a movie outside the home needs a public performance license even at a free event, so we should check whether the school or OUSD already holds one.</p>
 <p class="next">Details for whoever owns Kids Night Out: <a href="kids-night-out.html">the Kids Night Out plan page</a>, which stands on its own.</p></div>
 
-<div class="idea"><span class="num">02</span><h3>Fix-it projects and the shade push</h3>
+<div class="idea"><span class="num">02</span><h3>Fix-it projects and this year's turf project</h3>
 <ul>
 <li><strong>Clearance.</strong> OUSD's supervised tier needs registration, TB clearance, and mandated reporter training with an OUSD employee present. A Saturday workday with no staff falls in the unsupervised tier, which adds Live Scan fingerprints and a waiver. Ed Fund isn't covering fingerprint costs this year.</li>
-<li><strong>Shade is district construction.</strong> California's Division of the State Architect oversees building on public school sites. Vendors sell DSA pre-check shade designs with a faster approval path. Gifts to OUSD go through a board acceptance vote; the board accepted a $5,000 Crocker Highlands PTA donation that way in 2013. I haven't checked the rules for turf yet.</li>
-<li><strong>The money clock.</strong> Under the spend-it-this-year rule the dads can't bank money across years for shade. Making shade the auction's Fund-a-Need ask gets around it, because that line carries over.</li>
+<li><strong>Turf is the big one.</strong> Start with what kind (synthetic or grass), where it goes, and one installer quote. Shade would be district construction overseen by California's Division of the State Architect; I haven't confirmed whether turf needs the same review, so that's a question for the principal. Gifts to OUSD go through a board acceptance vote; the board accepted a $5,000 Crocker Highlands PTA donation that way in 2013.</li>
+<li><strong>If it's synthetic,</strong> ask installers for PFAS-free turf. A 2023 state bill banning PFAS turf at schools was vetoed, and I haven't found a newer rule.</li>
+<li><strong>The money clock.</strong> Under the spend-it-this-year rule the dads can't bank money across years. If turf costs more than this year's money, making it the auction's Fund-a-Need gets around that, because that line carries over.</li>
 </ul>
-<p class="next">Next: a core crew cleared now, and a yard walk plus one vendor quote, which turns "we want shade" into a number the PFC can vote on.</p></div>
+<p class="next">Next: a core crew cleared now, and a yard walk plus one installer quote, which turns the turf idea into a number the PFC can vote on.</p></div>
 
 <div class="idea"><span class="num">03</span><h3>A Thunder Dads site with a request flow</h3>
-<p>The <a href="index.html">site draft</a> follows the Montclair Dads Club page (why, what we do, how to join) and adds two things Montclair lacks: a request form for teachers and a project board anyone can read. Behind it sits a Google Sheet, so whoever runs Thunder Dads next can keep it going without code.</p>
+<p>The <a href="index.html">site draft</a> follows the Montclair Dads Club page (why, what we do, how to join) and adds what Montclair's page lacks: the $10,000 goal as a thermometer, a request form for teachers, a project board anyone can read, and a list of projects finished this year. Behind it sits a Google Sheet, so whoever runs Thunder Dads next can keep it going without code.</p>
 <ul>
+<li><strong>Big project:</strong> the year's main fundraising goal. This year, the turf area.</li>
 <li><strong>Fix it:</strong> dad labor plus small materials from the fix-it fund.</li>
 <li><strong>Fund it:</strong> a bigger materials buy, under a cap the dads set.</li>
 <li><strong>Find it:</strong> beyond the dads' budget, where the dads help find the money.</li>
@@ -147,10 +172,10 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 
 <div class="idea"><span class="num">04</span><h3>Faster sign-in, safer pickup</h3>
 <p>Givebutter's free app already scans each ticket's QR code and shows the answers collected at checkout, so required ticket questions plus two or three scanners fix the line. Pickup needs its own record: matching wristband numbers and a one-screen Google Form log with a timestamp on every release.</p>
-<p class="next">Next: three liability questions for the principal, listed below.</p></div>
+<p class="next">Next: the Kids Night Out questions for the principal, listed below.</p></div>
 
 <div class="idea"><span class="num">05</span><h3>A monthly PFC update, and request alerts on WhatsApp</h3>
-<p>A one-page update for the PFC each month: mission, money in, money out, and the project board counts. For alerts, WhatsApp doesn't let an ordinary account post into a group from code. Meta's group messaging for businesses reportedly requires an officially verified business account and small groups (vendor-reported; I couldn't confirm on Meta's pages), and third-party tools that post through a personal number break WhatsApp's rules.</p>
+<p>A one-page update for the PFC each month: the thermometer, money in, money out, and the project board counts. For alerts, WhatsApp doesn't let an ordinary account post into a group from code. Meta's group messaging for businesses reportedly requires an officially verified business account and small groups (vendor-reported; I couldn't confirm on Meta's pages), and third-party tools that post through a personal number break WhatsApp's rules.</p>
 <ul>
 <li><strong>Recommended:</strong> each form submission emails the coordinators a summary with a one-tap WhatsApp link, message already written. A coordinator picks the chat and sends. Free, and within the rules.</li>
 <li><strong>Fully automatic, to individuals:</strong> CallMeBot, free for personal use, messages each coordinator's own phone. It can't post to the group.</li>
@@ -160,22 +185,22 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 
 <section id="budget"><div class="wrap">
 <h2>A budget to start from</h2>
-<p class="sub">On a $5,000 base, Selam's estimate after this month's Kids Night Out. A proposal for the dads to argue about.</p>
+<p class="sub">Against the $10,000 goal for the year. A proposal for the dads to argue about.</p>
 <table class="tbl"><thead><tr><th>Bucket</th><th>Proposed</th><th>What it covers</th></tr></thead><tbody>
-<tr><td data-l="Bucket"><strong>Kids Night Out reserve</strong></td><td class="n" data-l="Proposed">$1,000</td><td data-l="What it covers">Pizza (enough this time), supplies, wristbands</td></tr>
-<tr><td data-l="Bucket"><strong>Fix-it fund</strong></td><td class="n" data-l="Proposed">$1,500</td><td data-l="What it covers">Materials for desks, chairs, the picket fence, and new requests</td></tr>
-<tr><td data-l="Bucket"><strong>Shade and turf</strong></td><td class="n" data-l="Proposed">$2,500</td><td data-l="What it covers">Groundwork (quote, site walk) plus a contribution toward the build</td></tr>
+<tr><td data-l="Bucket"><strong>Turf area</strong></td><td class="n" data-l="Proposed">$7,000</td><td data-l="What it covers">This year's big project: the quote, prep, and the build or a contribution toward it</td></tr>
+<tr><td data-l="Bucket"><strong>Fix-it fund</strong></td><td class="n" data-l="Proposed">$2,000</td><td data-l="What it covers">Materials for desks, chairs, the picket fence, and new requests</td></tr>
+<tr><td data-l="Bucket"><strong>Kids Night Out reserve</strong></td><td class="n" data-l="Proposed">$1,000</td><td data-l="What it covers">Pizza (enough this time), supplies, wristbands, and a movie license if the school doesn't have one</td></tr>
 </tbody></table>
 <div class="two" style="margin-top:16px">
 <div class="card"><h3>Mission (draft)</h3><p>Thunder Dads puts dads' time, skills, and money to work for Thornhill, fixing what teachers need fixed and running Kids Night Out so families get a night off.</p></div>
-<div class="card"><h3>Vision (draft)</h3><p>Every teacher request gets an answer within a week, and Thornhill kids have shade at recess.</p></div>
+<div class="card"><h3>Vision (draft)</h3><p>Every teacher request gets an answer within a week, and Thornhill kids have a turf area to play on.</p></div>
 </div>
 </div></section>
 
 <section id="next"><div class="wrap">
 <h2>Next steps</h2>
 <table class="tbl"><thead><tr><th>Step</th><th>Proposed owner</th><th>When</th></tr></thead><tbody>
-<tr><td data-l="Step">Confirm the account balance, and ask whether dads money can move into the auction's Fund-a-Need so it carries over</td><td data-l="Proposed owner">Scott, with the PFC Treasurer</td><td data-l="When">Before the next PFC meeting</td></tr><tr><td data-l="Step">Pick an owner for Kids Night Out tickets and share the Kids Night Out plan page with them</td><td data-l="Proposed owner">Scott</td><td data-l="When">This week</td></tr><tr><td data-l="Step">Set the ticket tiers, add the required ticket questions, and run a two-ticket test order</td><td data-l="Proposed owner">Kids Night Out owner</td><td data-l="When">Before tickets go on sale</td></tr><tr><td data-l="Step">Ask the principal the three Kids Night Out liability questions</td><td data-l="Proposed owner">Scott and Dan</td><td data-l="When">Before the next Kids Night Out</td></tr><tr><td data-l="Step">Get a core crew of four to six dads cleared through Oakland Ed Fund</td><td data-l="Proposed owner">Volunteers, coordinated by Scott</td><td data-l="When">Start now; fingerprint results take 2 to 4 weeks</td></tr><tr><td data-l="Step">Walk the yard with the principal about shade, and get one quote from a vendor with a DSA pre-check design</td><td data-l="Proposed owner">Scott and Dan</td><td data-l="When">Within 30 days</td></tr><tr><td data-l="Step">Propose shade as the auction's Fund-a-Need, with the dads as the campaign team</td><td data-l="Proposed owner">Scott</td><td data-l="When">When auction planning starts</td></tr><tr><td data-l="Step">Agree on the Fix it, Fund it, Find it lanes and a per-project cap</td><td data-l="Proposed owner">The dads</td><td data-l="When">Next meetup</td></tr><tr><td data-l="Step">Build the live request form, WhatsApp alert, and project board</td><td data-l="Proposed owner">Dan</td><td data-l="When">After the dads agree on the lanes</td></tr><tr><td data-l="Step">Give the first monthly dads update at the PFC, using the budget below</td><td data-l="Proposed owner">Scott or Dan</td><td data-l="When">Next PFC meeting</td></tr><tr><td data-l="Step">Add a "Fix-it requests" group to the Thunder Dads WhatsApp community</td><td data-l="Proposed owner">Community admin</td><td data-l="When">Anytime</td></tr>
+<tr><td data-l="Step">Confirm the account balance, which sets the starting point on the thermometer, and ask whether dads money can move into the auction's Fund-a-Need so it carries over</td><td data-l="Proposed owner">Scott, with the PFC Treasurer</td><td data-l="When">Before the next PFC meeting</td></tr><tr><td data-l="Step">Pick an owner for Kids Night Out tickets and share the Kids Night Out plan page with them</td><td data-l="Proposed owner">Scott</td><td data-l="When">This week</td></tr><tr><td data-l="Step">Set the ticket tiers, add the required ticket questions and the movie vote, and run a two-ticket test order</td><td data-l="Proposed owner">Kids Night Out owner</td><td data-l="When">Before tickets go on sale</td></tr><tr><td data-l="Step">Ask the principal the questions below, including the movie license</td><td data-l="Proposed owner">Scott and Dan</td><td data-l="When">Before the next Kids Night Out</td></tr><tr><td data-l="Step">Get a core crew of four to six dads cleared through Oakland Ed Fund</td><td data-l="Proposed owner">Volunteers, coordinated by Scott</td><td data-l="When">Start now; fingerprint results take 2 to 4 weeks</td></tr><tr><td data-l="Step">Walk the yard with the principal about the turf area, and get one installer quote</td><td data-l="Proposed owner">Scott and Dan</td><td data-l="When">Within 30 days</td></tr><tr><td data-l="Step">If turf costs more than this year's money, propose it as the auction's Fund-a-Need, with the dads as the campaign team</td><td data-l="Proposed owner">Scott</td><td data-l="When">When auction planning starts</td></tr><tr><td data-l="Step">Send Dan the projects finished so far this year for the completed list on the site</td><td data-l="Proposed owner">Scott</td><td data-l="When">This week</td></tr><tr><td data-l="Step">Agree on the lanes and a per-project cap</td><td data-l="Proposed owner">The dads</td><td data-l="When">Next meetup</td></tr><tr><td data-l="Step">Build the live request form, WhatsApp alert, and project board</td><td data-l="Proposed owner">Dan</td><td data-l="When">After the dads agree on the lanes</td></tr><tr><td data-l="Step">Give the first monthly dads update at the PFC, using the budget below</td><td data-l="Proposed owner">Scott or Dan</td><td data-l="When">Next PFC meeting</td></tr><tr><td data-l="Step">Add a "Fix-it requests" group to the Thunder Dads WhatsApp community</td><td data-l="Proposed owner">Community admin</td><td data-l="When">Anytime</td></tr>
 </tbody></table>
 </div></section>
 
@@ -185,7 +210,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <li><div><h3>Do parents watching kids at Kids Night Out count as unsupervised OUSD volunteers?</h3><p>If so, every free volunteer ticket needs fingerprints and a badge.</p></div></li>
 <li><div><h3>Who is the responsible adult on record for Kids Night Out?</h3></div></li>
 <li><div><h3>Does the PFC's insurance cover the event?</h3></div></li>
-<li><div><h3>Can we walk the yard about shade, and who is the right OUSD facilities contact?</h3></div></li>
+<li><div><h3>Does the school or OUSD hold a movie license that covers Kids Night Out?</h3><p>Licenses are per school site, and districts sometimes already hold one.</p></div></li>
+<li><div><h3>Can we walk the yard about a turf area, and what approval does turf need?</h3></div></li>
 <li><div><h3>Would folding stage walls attach to the building?</h3><p>If they do, they go through OUSD facilities.</p></div></li>
 </ol>
 </div></section>
@@ -193,10 +219,10 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <section id="decide"><div class="wrap">
 <h2>Decisions for the dads</h2>
 <ul class="facts">
+<li>Synthetic or grass for the turf area, and where it goes</li>
 <li>Ticket tiers and the lowest price, once someone knows what a kid costs in pizza and supplies</li>
-<li>Who owns Kids Night Out tickets and pickup</li>
+<li>Who owns Kids Night Out tickets and pickup, and the three movies for the first vote</li>
 <li>The per-project cap for Fund it, and who sorts new requests each week</li>
-<li>Whether to pitch shade as the auction's Fund-a-Need</li>
 <li>The budget split above</li>
 </ul>
 </div></section>
@@ -204,12 +230,13 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);f
 <section id="sources"><div class="wrap">
 <h2>Sources</h2>
 <ul class="src">
-<li>Thornhill PFC comms call, October 13, 2026 (Jon Yip, Priya Aslam, Selam Brown, Dan Smith): balance, spend-in-year rule, the principal's ask, Kids Night Out prices</li>
 <li>Montclair Dads Club, the model for the site draft: <a href="https://montclair.ousd.org/get-involved/montclair-dads-club">https://montclair.ousd.org/get-involved/montclair-dads-club</a></li>
 <li>Givebutter, tickets and custom fields: <a href="https://help.givebutter.com/en/articles/3661362-how-to-create-and-edit-tickets">https://help.givebutter.com/en/articles/3661362-how-to-create-and-edit-tickets</a></li>
 <li>Givebutter, ticket scanning and check-in: <a href="https://help.givebutter.com/en/articles/2852270-how-to-scan-tickets-and-check-guests-in">https://help.givebutter.com/en/articles/2852270-how-to-scan-tickets-and-check-guests-in</a></li>
 <li>Oakland Ed Fund, volunteer clearance FAQ: <a href="https://www.oaklandedfund.org/programs/volunteer/volunteer-faq/">https://www.oaklandedfund.org/programs/volunteer/volunteer-faq/</a></li>
 <li>Chabot Elementary (OUSD), volunteer tiers: <a href="https://chabot.ousd.org/resources/volunteer-information-and-requirements">https://chabot.ousd.org/resources/volunteer-information-and-requirements</a></li>
+<li>Movie licensing for school and PTA events (Washington State PTA): <a href="https://www.wastatepta.org/swank/">https://www.wastatepta.org/swank/</a></li>
+<li>Governor's 2023 veto of the PFAS turf bill, AB 1423: <a href="https://www.gov.ca.gov/wp-content/uploads/2023/10/AB-1423-VETO-1.pdf">https://www.gov.ca.gov/wp-content/uploads/2023/10/AB-1423-VETO-1.pdf</a></li>
 <li>DSA pre-check shade structures (vendor brochure): <a href="https://www.usa-shade.com/wp-content/uploads/2023/10/2026-DSA-Brochure-digital.pdf">https://www.usa-shade.com/wp-content/uploads/2023/10/2026-DSA-Brochure-digital.pdf</a></li>
 <li>OUSD board accepting a PTA donation, 2013: <a href="https://ousd.granicusideas.com/meetings/939-board-of-education-on-2013-10-23-5-00-pm">https://ousd.granicusideas.com/meetings/939-board-of-education-on-2013-10-23-5-00-pm</a></li>
 <li>DonorsChoose for teachers: <a href="https://www.donorschoose.org/teacher">https://www.donorschoose.org/teacher</a></li>
