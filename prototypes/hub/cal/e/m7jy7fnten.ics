@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:m7jy7fnten@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART;VALUE=DATE:20270212
+DTEND;VALUE=DATE:20270213
+SUMMARY:Valentine's Day
+LOCATION:Thornhill Elementary
+DESCRIPTION:Details on Konstella: https://www.konstella.com/activity-detail
+ s.html?activityId=6a8a1e3d321ad789101313af
+URL:https://www.konstella.com/activity-details.html?activityId=6a8a1e3d321a
+ d789101313af
+END:VEVENT
+END:VCALENDAR

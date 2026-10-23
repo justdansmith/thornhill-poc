@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:39p2156mx4@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART:20270223T164500Z
+DTEND:20270223T180000Z
+SUMMARY:Black History Month Assembly (Caregiver Event)
+LOCATION:Thornhill Elementary
+DESCRIPTION:Details on Konstella: https://www.konstella.com/activity-detail
+ s.html?activityId=6a8a1ece321ad78910131597
+URL:https://www.konstella.com/activity-details.html?activityId=6a8a1ece321a
+ d78910131597
+END:VEVENT
+END:VCALENDAR

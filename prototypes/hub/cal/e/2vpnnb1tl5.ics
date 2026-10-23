@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2vpnnb1tl5@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART:20261106T020000Z
+DTEND:20261106T030000Z
+SUMMARY:Neurodiverse Students & Families Advisory Group Meeting
+DESCRIPTION:All parents and caregivers are warmly invited to join our upcom
+ ing meetings to share ideas\, connect with fellow families\, and help shap
+ e a welcoming\, supportive environment for our entire school! Mark your ca
+ lendars for the next meeting on November 5th at 6pm on Zoom.
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:398g42yt72@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART:20270115T023000Z
+DTEND:20270115T033000Z
+SUMMARY:Prospective Families - In-Person Tour & Presentation
+LOCATION:Thornhill Elementary School\, 5880 Thornhill Dr\, Oakland\, CA 946
+ 11\, USA
+DESCRIPTION:Evening presentation and school walk-through - includes teacher
+  presentations For more info. and to RSVP\, visit: https://thornhill.ousd.
+ org/our-school/prospective-families
+END:VEVENT
+END:VCALENDAR

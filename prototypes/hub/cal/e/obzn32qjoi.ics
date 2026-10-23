@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:obzn32qjoi@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART:20270520T230000Z
+DTEND:20270521T010000Z
+SUMMARY:JCC Spring Expo
+LOCATION:Thornhill Elementary
+DESCRIPTION:Details on Konstella: https://www.konstella.com/activity-detail
+ s.html?activityId=6a8a229f321ad78910132081
+URL:https://www.konstella.com/activity-details.html?activityId=6a8a229f321a
+ d78910132081
+END:VEVENT
+END:VCALENDAR

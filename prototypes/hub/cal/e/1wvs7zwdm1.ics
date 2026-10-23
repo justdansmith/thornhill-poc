@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:1wvs7zwdm1@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART:20270203T163000Z
+DTEND:20270203T171500Z
+SUMMARY:Coffee with the Principal
+LOCATION:Thornhill Elementary School\, 5880 Thornhill Dr\, Oakland\, CA 946
+ 11\, USA
+DESCRIPTION:Opportunity to connect and hear more about plans for the year.
+END:VEVENT
+END:VCALENDAR

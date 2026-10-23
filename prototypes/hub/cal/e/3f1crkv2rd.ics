@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:3f1crkv2rd@thornhill-hub-prototype
+DTSTAMP:20261023T184452Z
+DTSTART:20270307T020000Z
+DTEND:20270307T070000Z
+SUMMARY:Annual Auction and Benefit
+LOCATION:Thornhill Elementary
+DESCRIPTION:Details on Konstella: https://www.konstella.com/activity-detail
+ s.html?activityId=6a8a1f25321ad789101316e6
+URL:https://www.konstella.com/activity-details.html?activityId=6a8a1f25321a
+ d789101316e6
+END:VEVENT
+END:VCALENDAR
