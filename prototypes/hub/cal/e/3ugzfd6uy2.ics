@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:3ugzfd6uy2@thornhill-hub-prototype
+DTSTAMP:20261023T220837Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261205
+SUMMARY:Heritage project presentations
+LOCATION:Thornhill Elementary School
+DESCRIPTION:One to two minutes each\, in the morning. Families are welcome 
+ at their child's presentation.
+END:VEVENT
+END:VCALENDAR

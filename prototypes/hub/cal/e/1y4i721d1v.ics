@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:1y4i721d1v@thornhill-hub-prototype
+DTSTAMP:20261023T220837Z
+DTSTART:20261030T203000Z
+DTEND:20261030T210000Z
+SUMMARY:Halloween parade
+LOCATION:Thornhill Elementary School
+DESCRIPTION:On the Thornhill track. Families can watch from outside the tra
+ ck\; Gate A opens at 1:20.
+END:VEVENT
+END:VCALENDAR
