@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:36uzou5b99@thornhill-hub-prototype
+DTSTAMP:20261023T201634Z
+DTSTART:20261030T192000Z
+DTEND:20261030T202000Z
+SUMMARY:Room 2 Halloween centers
+LOCATION:Thornhill Elementary School
+DESCRIPTION:Beads\, crafts\, and cookies in class before the parade.
+END:VEVENT
+END:VCALENDAR
