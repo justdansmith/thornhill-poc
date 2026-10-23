@@ -186,9 +186,10 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
     <label for="f-name">Your name, as the kids will hear it<input id="f-name" data-key="name" placeholder="your first name" autocomplete="off"></label>
     <label for="f-kids">Your kids' names (optional)<input id="f-kids" data-key="kids" placeholder="adds &quot;I'm ___'s dad&quot; to the welcome" autocomplete="off"></label>
     <label for="f-bath">Bathroom rule<input id="f-bath" data-key="bath" placeholder="e.g. tell a helper, go with a grown-up" autocomplete="off"></label>
-    <label for="f-pizza">Pizza time<input id="f-pizza" data-key="pizza" placeholder="when pizza gets served" autocomplete="off"></label>
-    <label for="f-movie">Tonight's movie<input id="f-movie" data-key="movie" placeholder="e.g. the winner of the vote" autocomplete="off"></label>
-    <label for="f-pickup">Pickup time<input id="f-pickup" data-key="pickup" placeholder="when parents come back" autocomplete="off"></label>
+    <label for="f-pizza">Pizza time<input id="f-pizza" data-key="pizza" placeholder="6:30 on past nights" autocomplete="off"></label>
+    <label for="f-movie">Tonight's movie<input id="f-movie" data-key="movie" placeholder="e.g. the winner of the ticket vote" autocomplete="off"></label>
+    <label for="f-runtime">Movie length in minutes<input id="f-runtime" data-key="runtime" inputmode="numeric" placeholder="sets the movie start time" autocomplete="off"></label>
+    <label for="f-pickup">Pickup time<input id="f-pickup" data-key="pickup" placeholder="all kids out by 9:00" autocomplete="off"></label>
   </div>
   <div class="row"><button class="btn" id="wake" type="button">Keep screen awake</button><span id="wakeStatus" role="status" aria-live="polite"></span></div>
 
@@ -213,19 +214,19 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 
 <section id="order">
   <h2>Order of the night</h2>
-  <p class="time">Suggested. Slide the times to match your clock.</p>
+  <p class="time">How past nights have run. A long movie starts earlier so it ends around 8:00 to 8:15.</p>
   <table class="run">
-    <tr><td>Before doors</td><td>Water cooler set up, sleeping bag zone marked, art corner ready</td></tr>
-    <tr><td>Doors open</td><td>Greet at the door, sleeping bags down, then the art corner</td></tr>
-    <tr><td>+15 min</td><td>Welcome, signal, rules (about 5 minutes)</td></tr>
-    <tr><td>+20 min</td><td>Would You Rather, then the Rock Paper Scissors tournament</td></tr>
-    <tr><td>+30 min</td><td>Pour water cups while a volunteer runs Stand Up If</td></tr>
-    <tr><td>+35 min</td><td>Pizza and water, one row at a time</td></tr>
-    <tr><td>+60 min</td><td>Jokes and Joke Mic while kids finish, cleanup, popcorn on</td></tr>
-    <tr><td>+70 min</td><td>Popcorn out, Sleeping Lions, whisper countdown, movie</td></tr>
-    <tr><td>After movie</td><td>Burrito roll and parade to the stage, pizza box cleanup, dance, then quiet time while families sign out</td></tr>
-    <tr><td>End</td><td>Pickup at <span class="fill" data-fill="pickup">[pickup time]</span></td></tr>
+    <tr><td>Before 6:00</td><td>Water cooler set up, popcorn made, sleeping bag zone marked, art corner ready</td></tr>
+    <tr><td>6:00</td><td>Doors open: check-in, popcorn at the door, sleeping bags down, then the art corner</td></tr>
+    <tr><td>Once most are in</td><td>Welcome, signal, rules (about 5 minutes), then Would You Rather on the big screen in place of the short videos</td></tr>
+    <tr><td>Before pizza</td><td>Pour water cups while a volunteer runs Stand Up If</td></tr>
+    <tr><td><span class="fill" data-fill="pizza">6:30</span></td><td>Pizza and water, one row at a time, jokes while they eat</td></tr>
+    <tr><td><span class="startby">6:45</span></td><td>Sleeping Lions, whisper countdown, movie</td></tr>
+    <tr><td>8:15</td><td>Movie ends, lights on: burrito roll, sleeping bags to the stage, Pizza Box Monster cleanup</td></tr>
+    <tr><td>8:30 to 8:40</td><td>Cleanup done enough: limbo and dance music, then quiet time as families sign out</td></tr>
+    <tr><td>9:00</td><td>All kids out. Dads finish cleanup and hand the room to Mr. Ray.</td></tr>
   </table>
+  <p class="time">Movie start: <b class="startby">6:45</b>. Put the movie length in Tonight's details and this works back from 8:15.</p>
 </section>
 
 <section id="jobs">
@@ -235,15 +236,15 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
     <li><input type="checkbox" id="j1"><label for="j1"><b>Set up the water cooler</b> before doors open. Put it near the pizza, away from the sleeping bags, with a towel under the spout.</label></li>
     <li><input type="checkbox" id="j2"><label for="j2"><b>Pour water cups</b> about 10 minutes before pizza. Fill them halfway so little hands don't spill, and line them up so each kid grabs one with a slice.</label></li>
     <li><input type="checkbox" id="j3"><label for="j3"><b>Hand out pizza</b> one slice per kid until everyone has one, then seconds.</label></li>
-    <li><input type="checkbox" id="j4"><label for="j4"><b>Make popcorn</b> during pizza cleanup so it's ready when the lights go down. Hand it out row by row on the sleeping bags.</label></li>
+    <li><input type="checkbox" id="j4"><label for="j4"><b>Make popcorn</b> before 6:00. It goes out at check-in as each kid walks in.</label></li>
   </ul>
   <div class="tip"><b>Thunder Captains can help.</b> Big kids can pass out napkins and popcorn. Water and pizza stay with grown-ups.</div>
 </section>
 
 <section id="arrive">
   <h2>As kids arrive</h2>
-  <p class="time">While drop-off trickles in, about 15 minutes</p>
-  <div class="do"><span>Do</span><p>Stand at the door. Greet every kid by name and ask one easy question.</p></div>
+  <p class="time">6:00, doors open and check-in starts</p>
+  <div class="do"><span>Do</span><p>Stand at the door. Greet every kid by name, hand them their popcorn, and ask one easy question.</p></div>
   <div class="say"><span>Say</span><p>Hey, welcome! Quick question: what's the best pizza topping in the whole world?</p></div>
   <div class="say"><span>Say</span><p>First, find a spot in the rows and lay out your sleeping bag and pillow. That's your home for the movie.</p></div>
   <div class="say"><span>Say</span><p>Then head to the art corner and draw the wildest pizza you can imagine. Or the silliest monster. We'll show off the best ones before dinner.</p></div>
@@ -461,7 +462,7 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 
 <section id="pizza">
   <h2>Into pizza</h2>
-  <p class="time">Pizza at <span class="fill" data-fill="pizza">[pizza time]</span></p>
+  <p class="time">Pizza at <span class="fill" data-fill="pizza">6:30</span></p>
   <div class="say"><span>Say</span><p>Thunder! <span class="kids">BOOM.</span> Pizza rules: hands washed first, then grab one slice and one water cup, and sit on the floor to eat. Pizza stays off the sleeping bags. Once everyone has a slice, raise your hand for seconds.</p></div>
   <div class="say"><span>Say</span><p>The row that's sitting the quietest goes first. Ooh, look at this row.</p></div>
   <div class="tip"><b>One slice each first,</b> so the last kids in line still get pizza. Seconds once everyone has eaten.</div>
@@ -469,9 +470,17 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 
 <section id="movie">
   <h2>Into the movie</h2>
-  <div class="say"><span>Say</span><p>Everybody back to your sleeping bag. Popcorn is coming to you, so stay put. Tonight's movie is <span class="fill" data-fill="movie">[tonight's movie]</span>! Movie rules: stay on your sleeping bag, whisper only, and bathroom trips with a grown-up.</p></div>
-  <div class="do"><span>Do</span><p>Hand out popcorn row by row, then run Sleeping Lions and the whisper countdown into lights down.</p></div>
+  <p class="time">Movie at <span class="startby">6:45</span>, so it ends by 8:15</p>
+  <div class="say"><span>Say</span><p>Everybody back to your sleeping bag and get comfy. Tonight's movie is <span class="fill" data-fill="movie">[tonight's movie]</span>! Movie rules: stay on your sleeping bag, whisper only, and bathroom trips with a grown-up.</p></div>
+  <div class="do"><span>Do</span><p>Run Sleeping Lions and the whisper countdown into lights down.</p></div>
   <div class="stack">
+    <details>
+      <summary><span class="sum"><b>If kids voted on their tickets</b><small>Reveal the winner</small></span></summary>
+      <div class="body">
+        <div class="say"><span>Say</span><p>You all picked tonight's movie when you got your tickets. Drumroll, please... <span class="kids">(drumroll on the floor)</span> Tonight's movie is <span class="fill" data-fill="movie">[tonight's movie]</span>!</p></div>
+        <div class="tip"><b>Announce the winner only.</b> Skip the vote counts, so nobody hears their pick lost.</div>
+      </div>
+    </details>
     <details>
       <summary><span class="sum"><b>Sleeping Lions</b><small>1 to 2 min · calms the room</small></span></summary>
       <div class="body">
@@ -489,11 +498,11 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 
 <section id="end">
   <h2>After the movie</h2>
-  <p class="time">Pack up, clean up, dance, then quiet time while families sign out. Each step has a slide.</p>
+  <p class="time">8:15 to 9:00. Pack up, clean up, dance, then quiet time while families sign out. Each step has a slide.</p>
   <div class="tip"><b>Nothing flies, all night.</b> Balloon keepy-uppy got little kids hurt: kids chasing something overhead don't see each other.</div>
 
   <h3>1. Burrito roll and parade to the stage</h3>
-  <p class="meta">About 5 min · slides: Burrito time, Parade to the stage</p>
+  <p class="meta">8:15, about 5 min · slides: Burrito time, Parade to the stage</p>
   <div class="say"><span>Say</span><p>Lights up! Burrito time: roll your sleeping bag up tight and put your pillow on top. You've got one minute.</p></div>
   <div class="say"><span>Say</span><p>When your sleeping bag color lights up on the screen, walk your burrito to the stage, set it down, and come back to the open floor.</p></div>
 
@@ -502,12 +511,14 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
   <div class="do"><span>Do</span><p>Open the empty pizza boxes and hold them like monster mouths. Secretly pick one piece of trash as the Mystery Trash. Full boxes go straight in the trash.</p></div>
   <div class="say"><span>Say</span><p>The Pizza Box Monsters are starving! Feed them napkins, cups, and popcorn. One piece of trash is the Mystery Trash, and whoever picks it up leads the dance. Two minutes. Go!</p></div>
 
-  <h3>3. Dance party</h3>
-  <p class="meta">5 to 10 min · slides: Freeze Dance, Dance like a...</p>
+  <h3>3. Dance party and limbo</h3>
+  <p class="meta">8:30 to 8:40, once cleanup is done enough · slides: Freeze Dance, Dance like a..., Limbo</p>
   <div class="say"><span>Say</span><p>Our Mystery Trash finder is the dance leader! When the music stops, freeze!</p></div>
+  <div class="say"><span>Say</span><p>Limbo time! One line, no running starts. Lean back and go under without touching the stick. Every round it goes lower. How low can you go?</p></div>
+  <div class="do"><span>Do</span><p>Two grown-ups hold the limbo stick. Little kids go first while it's high. Each time the stick drops, press the arrow so the bar on screen drops too.</p></div>
 
   <h3>4. Quiet time while families sign out</h3>
-  <p class="meta">Until the last pickup · slides: Quiet time, Quiet riddles, Silent Simon</p>
+  <p class="meta">Until 9:00, all kids out · slides: Quiet time, Quiet riddles, Silent Simon</p>
   <div class="say"><span>Say</span><p>Everybody sit down in front of the stage. When a helper calls your name, grab your stuff and meet your grown-up at sign-out. Everyone else whisper-waves goodbye.</p></div>
 
   <div class="stack">
@@ -551,8 +562,9 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 
 <section id="pickup">
   <h2>Pickup and goodbye</h2>
-  <p class="time">Pickup at <span class="fill" data-fill="pickup">[pickup time]</span></p>
+  <p class="time">Pickup <span class="fill" data-fill="pickup">by 9:00</span></p>
   <div class="say"><span>Say</span><p>When a helper calls your name, grab your stuff from the stage and meet your grown-up at sign-out. Nobody walks out alone.</p></div>
+  <div class="do"><span>Do</span><p>9:00: all kids out. Dads finish the cleanup and hand the room to Mr. Ray.</p></div>
   <div class="say"><span>Say</span><p>Before you go: let's give our volunteers some thunderous applause! Thunder! <span class="kids">BOOM!</span> Thanks for coming to Kids Night Out!</p></div>
 </section>
 
@@ -596,6 +608,10 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
       });
       document.querySelectorAll('[data-opt="' + k + '"]').forEach(function (w) { w.hidden = !v; });
     });
+    var len = parseInt(document.getElementById("f-runtime").value, 10);
+    var start = len >= 30 && len <= 240 ? Math.min(405, 495 - len) : 405;
+    var hm = Math.floor(start / 60) + ":" + ("0" + (start % 60)).slice(-2);
+    document.querySelectorAll(".startby").forEach(function (s) { s.textContent = hm; });
   }
   inputs.forEach(function (inp) {
     if (saved[inp.dataset.key]) inp.value = saved[inp.dataset.key];
