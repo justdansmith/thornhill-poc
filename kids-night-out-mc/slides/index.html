@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kids Night Out Slides</title>
+<meta name="description" content="Big-screen slides for Thunder Dads Kids Night Out: signal, rules, games, pizza, movie, and the after-movie pack-up, cleanup, dance, and quiet time.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='12' fill='%230b3a7a'/%3E%3Cpath d='M13 4 6 14h5l-1 6 7-10h-5z' fill='%23f5b54a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap">
+<style>
+/* Layout: 1920x1080 stage scaled to the window, dark for a dim MPR, one bold idea per slide, readable from the back row. */
+:root {
+  --bg: #0b1120;
+  --panel: #141d33;
+  --ink: #eef1f8;
+  --muted: #9aa5c0;
+  --line: #26314d;
+  --amber: #f5b54a;
+  --sky: #8fb4ff;
+  --ice: #a5f3fc;
+  --display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: var(--body); overflow: hidden; }
+body.idle { cursor: none; }
+.deck { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: center center; }
+.slide {
+  position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; gap: 40px;
+  padding: 100px 150px; background: var(--bg); overflow: hidden;
+}
+.slide.active { display: flex; }
+.center { align-items: center; text-align: center; }
+p { margin: 0; }
+.big { font: 700 190px/1 var(--display); margin: 0; letter-spacing: -.01em; }
+.h { font: 600 112px/1.05 var(--display); text-wrap: balance; }
+.sub { font: 400 54px/1.35 var(--body); color: var(--muted); }
+.lead { font: 600 92px/1.15 var(--display); }
+.amber { color: var(--amber); }
+.sky { color: var(--sky); }
+.pending { visibility: hidden; }
+.gone { display: none !important; }
+
+.i { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.rows { display: grid; gap: 30px; margin-top: 6px; }
+.row { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 44px; font: 600 80px/1.1 var(--display); }
+.row svg { width: 110px; height: 110px; color: var(--sky); }
+.row svg.bolt { color: var(--amber); }
+
+.art { display: block; width: 100%; height: auto; }
+.art-top { width: 560px; }
+.two { display: grid; grid-template-columns: 620px 1fr; align-items: center; gap: 90px; }
+.two .text { display: flex; flex-direction: column; gap: 34px; }
+
+.boom { font: 700 230px/1 var(--display); color: var(--amber); }
+
+.wyr .h { text-align: center; font-size: 96px; }
+.split { display: grid; grid-template-columns: 1fr 130px 1fr; align-items: center; gap: 24px; }
+.side {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+  height: 640px; padding: 40px; background: var(--panel); border-radius: 24px; text-align: center;
+  font: 600 92px/1.1 var(--display); text-wrap: balance;
+}
+.side b { font: 700 120px/1 var(--display); color: var(--amber); }
+.or { font: 700 64px/1 var(--display); color: var(--muted); text-align: center; }
+
+.chips { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.chips li { display: flex; align-items: center; gap: 36px; font: 600 74px/1.1 var(--display); color: var(--muted); transform-origin: left center; transition: transform .25s, color .25s, opacity .25s; }
+.chips i { width: 88px; height: 88px; border-radius: 50%; flex: none; border: 5px solid var(--line); }
+.chips li.on { color: var(--ink); transform: scale(1.12); }
+.chips li.on i { border-color: var(--amber); }
+.chips li.done { opacity: .35; }
+.rainbow { background: conic-gradient(#ef4444, #f59e0b, #facc15, #22c55e, #3b82f6, #a855f7, #ef4444); }
+
+.timer { display: flex; align-items: baseline; gap: 30px; }
+.timer .num { font: 700 170px/1 var(--display); color: var(--amber); font-variant-numeric: tabular-nums; }
+.timer .tlabel { font: 400 50px/1 var(--body); color: var(--muted); }
+.timer.done .num { animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+.mystery { font: 700 60px/1.2 var(--display); color: var(--amber); }
+
+.freeze .dw, .freeze .fw { font: 700 300px/1 var(--display); }
+.freeze .dw { color: var(--amber); }
+.freeze .fw { display: none; color: var(--ice); }
+.freeze.frozen { background: #0a2433; }
+.freeze.frozen .dw { display: none; }
+.freeze.frozen .fw { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .freeze:not(.frozen) .dw { animation: wiggle .5s ease-in-out infinite alternate; }
+}
+@keyframes wiggle { from { transform: rotate(-4deg); } to { transform: rotate(4deg) scale(1.06); } }
+
+.word { font: 700 200px/1.05 var(--display); color: var(--amber); }
+
+.kicker { font: 700 40px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.q { font: 600 100px/1.15 var(--display); text-wrap: balance; margin-bottom: 56px; }
+.a { font: 700 140px/1 var(--display); color: var(--amber); }
+
+.progress { position: fixed; left: 0; bottom: 0; height: 5px; background: var(--amber); opacity: .45; z-index: 4; transition: width .25s; }
+.hint {
+  position: fixed; right: 18px; bottom: 16px; z-index: 5; padding: 8px 12px; border-radius: 6px;
+  font: 14px/1.4 var(--body); color: var(--muted); background: rgba(11, 17, 32, .9);
+  opacity: 0; transition: opacity .4s; pointer-events: none;
+}
+.hint.show { opacity: 1; }
+
+/* Contact sheet for checking every slide at once: add ?sheet to the URL */
+.sheet, .sheet body { overflow: auto; height: auto; }
+.sheet .deck { position: static; transform: none !important; width: auto; height: auto; display: grid; grid-template-columns: repeat(4, 480px); gap: 14px; padding: 14px; }
+.sheet .cell { position: relative; width: 480px; height: 270px; overflow: hidden; outline: 1px solid var(--line); }
+.sheet .cell .slide { display: flex; inset: auto; left: 0; top: 0; width: 1920px; height: 1080px; transform: scale(.25); transform-origin: 0 0; }
+.sheet .hint, .sheet .progress { display: none; }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+<section class="slide center" data-title="Welcome" data-notes="Leave this up while kids arrive. Arrows or the clicker move forward. Space starts timers and flips Dance and Freeze. F is full screen.">
+  <svg class="art art-top" viewBox="0 0 640 440" aria-hidden="true">
+    <g fill="#2b3a63"><circle cx="205" cy="185" r="95"/><circle cx="330" cy="140" r="125"/><circle cx="455" cy="190" r="90"/><rect x="115" y="180" width="430" height="100" rx="50"/></g>
+    <g fill="#3b4d80"><circle cx="300" cy="118" r="70"/><circle cx="205" cy="170" r="48"/></g>
+    <path d="M345 250 270 360h55l-22 80 105-140h-58l38-50z" fill="#f5b54a"/>
+    <g fill="#8fb4ff"><circle cx="150" cy="330" r="7"/><circle cx="505" cy="335" r="7"/><circle cx="200" cy="400" r="5"/><circle cx="460" cy="410" r="5"/></g>
+  </svg>
+  <h1 class="big">Kids Night Out</h1>
+  <p class="sub">Thunder Dads · Thornhill Elementary</p>
+</section>
+
+<section class="slide center" data-title="The secret signal" data-notes="Say: When I say Thunder, you say BOOM, then total silence. Click to show BOOM, click again for the silence line. Practice whispered, then the loudest BOOM ever. Trick round: Thunder-pants!">
+  <p class="h">When I say <span class="sky">THUNDER</span></p>
+  <p class="boom" data-show="1">you say BOOM!</p>
+  <p class="sub" data-show="2">...then total silence.</p>
+</section>
+
+<section class="slide" data-title="The Thunder Rules" data-notes="Let kids guess each rule before you click to show it. Rule one: tell a grown-up before the bathroom, every time. Rule two: walk around sleeping bags, never over them.">
+  <p class="h">The Thunder Rules</p>
+  <div class="rows">
+    <div class="row" data-show="1"><svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg><span>Stay in the room</span></div>
+    <div class="row" data-show="2"><svg class="i" viewBox="0 0 24 24"><path d="M7 2.5c-1.8 0-2.8 2.1-2.8 4.9S5.2 12.5 7 12.5s2.8-2.3 2.8-5.1S8.8 2.5 7 2.5z"/><path d="M5 15h4v2.5a2 2 0 0 1-4 0z"/><path d="M17 6.5c-1.8 0-2.8 2.1-2.8 4.9s1 5.1 2.8 5.1 2.8-2.3 2.8-5.1-1-4.9-2.8-4.9z"/><path d="M15 19h4v.5a2 2 0 0 1-4 0z"/></svg><span>Walking feet</span></div>
+    <div class="row" data-show="3"><svg class="i" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/></svg><span>Kind hands, kind words</span></div>
+    <div class="row" data-show="4"><svg class="bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg><span>THUNDER means BOOM and freeze</span></div>
+  </div>
+</section>
+
+<section class="slide wyr" data-title="Would You Rather" data-notes="Kids walk to the side they pick: screen left or screen right. Ask one kid from each side why. Click for the next one. The last one sits everyone down.">
+  <p class="h">Would you rather...</p>
+  <div class="split" data-only="0-0"><div class="side"><span>Have a pet dragon</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Have a pet unicorn</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="1-1"><div class="side"><span>Pizza for breakfast every day</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Ice cream for dinner every day</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="2-2"><div class="side"><span>Be able to fly</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Be invisible</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="3-3"><div class="side"><span>Have spaghetti for hair</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Sweat maple syrup</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="4-4"><div class="side"><span>Be a ghost for Halloween</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Be a vampire for Halloween</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="5-5"><div class="side"><span>Live in a treehouse</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Live in a submarine</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="6-6"><div class="side"><span>Talk to animals</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Speak every language</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="7-7"><div class="side"><span>Have T. rex arms</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Have a giraffe neck</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="8-8"><div class="side"><span>Be as tiny as an ant</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Be as big as a house</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="9-9"><div class="side"><span>Never have homework</span><b>&larr;</b></div><div class="or">or</div><div class="side"><span>Never have a bedtime</span><b>&rarr;</b></div></div>
+  <div class="split" data-only="10-10"><div class="side"><span>Sit down quietly right now</span><b>&darr;</b></div><div class="or">or</div><div class="side"><span>Sit down quietly right now</span><b>&darr;</b></div></div>
+</section>
+
+<section class="slide center" data-title="Rock Paper Scissors" data-notes="Everyone finds a partner and plays one round. The loser becomes the winner's cheerleader and chants their name. Winners find winners until two kids face off with half the room cheering each.">
+  <p class="h">Rock, Paper, Scissors</p>
+  <p class="lead">Lose? Become their <span class="amber">biggest fan!</span></p>
+  <p class="sub">Cheer their name as loud as you can.</p>
+</section>
+
+<section class="slide" data-title="Pizza time" data-notes="Pour water cups before this slide. Release one row at a time, quietest row first. Pizza stays off the sleeping bags. One slice each until everyone has one.">
+  <p class="h">Pizza time!</p>
+  <div class="rows">
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><path d="M12 3s-6.5 7.2-6.5 11.5a6.5 6.5 0 0 0 13 0C18.5 10.2 12 3 12 3z"/></svg><span>Wash your hands</span></div>
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><path d="M12 22 3 6a14 14 0 0 1 18 0z"/><circle cx="10" cy="10" r="1.2"/><circle cx="14" cy="12.5" r="1.2"/><circle cx="12" cy="16.5" r="1"/></svg><span>One slice + one water</span></div>
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="m7.5 10 4.5 4.5 4.5-4.5"/><path d="M4 20h16"/></svg><span>Eat on the floor</span></div>
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>Seconds after everyone eats</span></div>
+  </div>
+</section>
+
+<section class="slide" data-title="Movie time" data-notes="Hand out popcorn row by row. Run Sleeping Lions, then the whisper countdown from ten, then switch to the movie.">
+  <p class="h">Movie time!</p>
+  <div class="rows">
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="19" height="12" rx="6"/><rect x="4.5" y="9" width="5" height="7" rx="2.5"/><path d="M11.5 12.5h10"/></svg><span>Stay on your sleeping bag</span></div>
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg><span>Whisper only</span></div>
+    <div class="row"><svg class="i" viewBox="0 0 24 24"><circle cx="8" cy="5.5" r="2.5"/><path d="M4 21v-6.5a4 4 0 0 1 8 0V21"/><circle cx="17" cy="10" r="2"/><path d="M14 21v-4a3 3 0 0 1 6 0v4"/></svg><span>Bathroom with a grown-up</span></div>
+  </div>
+</section>
+
+<section class="slide" data-title="Burrito time" data-action="timer" data-seconds="60" data-notes="Lights up, movie's over. Kids roll their sleeping bags into burritos with the pillow on top. Space starts the one-minute timer.">
+  <div class="two">
+    <svg class="art" viewBox="0 0 600 380" aria-hidden="true">
+      <rect x="50" y="150" width="400" height="184" rx="92" fill="#4a6bc0"/>
+      <circle cx="450" cy="242" r="92" fill="#5b7fd6"/>
+      <path d="M450 242a8 8 0 0 1 16 0a16 16 0 0 1-32 0a24 24 0 0 1 48 0a32 32 0 0 1-64 0a40 40 0 0 1 80 0a48 48 0 0 1-96 0" fill="none" stroke="#c7d6ff" stroke-width="9" stroke-linecap="round"/>
+      <rect x="140" y="66" width="250" height="104" rx="46" fill="#eef1f8"/>
+      <path d="M170 118h190" stroke="#c9d2e6" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <div class="text">
+      <p class="h">Burrito time!</p>
+      <p class="sub">Roll your sleeping bag up tight.<br>Pillow on top.</p>
+      <div class="timer"><span class="num">1:00</span><span class="tlabel">Ready?</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Parade to the stage" data-notes="Click to light up one color at a time. Kids walk their burrito and pillow to the stage, set it down, and come back to the open floor.">
+  <p class="h">Parade to the stage!</p>
+  <p class="sub">When your sleeping bag color lights up, walk your stuff to the stage.</p>
+  <ul class="chips">
+    <li data-on="1"><i style="background:#3b82f6"></i>Blue</li>
+    <li data-on="2"><i style="background:linear-gradient(90deg,#ef4444 50%,#f472b6 50%)"></i>Red and pink</li>
+    <li data-on="3"><i style="background:linear-gradient(90deg,#22c55e 50%,#facc15 50%)"></i>Green and yellow</li>
+    <li data-on="4"><i style="background:linear-gradient(90deg,#a855f7 50%,#111827 50%)"></i>Purple and black</li>
+    <li data-on="5"><i class="rainbow"></i>Everything else</li>
+  </ul>
+</section>
+
+<section class="slide" data-title="Pizza Box Monster" data-action="timer" data-seconds="120" data-notes="Open the empty pizza boxes and hold them like monster mouths. Kids feed them napkins, cups, and popcorn. Secretly pick one piece of trash as the Mystery Trash; whoever picks it up leads the dance. Space starts the two-minute timer. Full boxes go in the trash.">
+  <div class="two">
+    <svg class="art" viewBox="0 0 400 320" aria-hidden="true">
+      <polygon points="60,150 340,150 312,40 88,40" fill="#c98a3a" stroke="#8a5a1c" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="160" cy="95" r="27" fill="#fff"/><circle cx="167" cy="101" r="12" fill="#12203a"/>
+      <circle cx="240" cy="95" r="27" fill="#fff"/><circle cx="247" cy="101" r="12" fill="#12203a"/>
+      <rect x="60" y="150" width="280" height="36" fill="#2a130a"/>
+      <ellipse cx="200" cy="178" rx="48" ry="10" fill="#e0607e"/>
+      <polygon points="60,150 74,170 88,150 102,170 116,150 130,170 144,150 158,170 172,150 186,170 200,150 214,170 228,150 242,170 256,150 270,170 284,150 298,170 312,150 326,170 340,150" fill="#fff"/>
+      <rect x="60" y="186" width="280" height="96" fill="#d99b4b" stroke="#8a5a1c" stroke-width="5" stroke-linejoin="round"/>
+      <polygon points="60,186 74,168 88,186 102,168 116,186 130,168 144,186 158,168 172,186 186,168 200,186 214,168 228,186 242,168 256,186 270,168 284,186 298,168 312,186 326,168 340,186" fill="#fff"/>
+      <text x="200" y="250" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="40" fill="#8a5a1c">PIZZA</text>
+    </svg>
+    <div class="text">
+      <p class="h">Feed the Pizza Box Monster!</p>
+      <p class="sub">Napkins, cups, popcorn: CHOMP!</p>
+      <p class="mystery">Find the Mystery Trash<br>and lead the dance!</p>
+      <div class="timer"><span class="num">2:00</span><span class="tlabel">Ready?</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide center freeze" data-title="Freeze Dance" data-action="freeze" data-notes="Start the music. Space flips the screen to FREEZE when you stop the music, and back to DANCE when it starts. The Mystery Trash finder leads the moves. Arrow keys move on.">
+  <p class="dw">DANCE!</p>
+  <p class="fw">FREEZE!</p>
+</section>
+
+<section class="slide center" data-title="Dance like a..." data-notes="Click for the next move. Keep big kids on their knees if the little ones are close by.">
+  <p class="h">Dance like a...</p>
+  <p class="word" data-only="0-0">robot</p>
+  <p class="word" data-only="1-1">ghost</p>
+  <p class="word" data-only="2-2">spaghetti noodle</p>
+  <p class="word" data-only="3-3">chicken</p>
+  <p class="word" data-only="4-4">superhero</p>
+  <p class="word" data-only="5-5">sleepy sloth</p>
+  <p class="word" data-only="6-6">slow-motion ninja</p>
+</section>
+
+<section class="slide center" data-title="Quiet time" data-notes="Kids sit on the floor in front of the stage. When a helper calls a name, that kid grabs their stuff and goes to sign-out. Everyone whisper-waves goodbye.">
+  <svg class="art" style="width:300px" viewBox="0 0 24 24" aria-hidden="true"><path class="i" style="color:#8fb4ff;stroke-width:1.4" d="M4 5h16v11H10l-5 4v-4H4z"/><path class="i" style="color:#f5b54a;stroke-width:1.8" d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg>
+  <p class="h">Quiet time</p>
+  <p class="sub">Sit down and listen for your name.<br>When a friend leaves, whisper-wave goodbye.</p>
+</section>
+
+<section class="slide center" data-title="Quiet riddles" data-notes="Kids whisper their guess to a neighbor. Click to show the answer, click again for the next riddle.">
+  <p class="kicker">Whisper your guess</p>
+  <div data-only="0-1"><p class="q">I have hands, but I can't clap.<br>What am I?</p><p class="a" data-show="1">A clock!</p></div>
+  <div data-only="2-3"><p class="q">What has to be broken<br>before you can use it?</p><p class="a" data-show="3">An egg!</p></div>
+  <div data-only="4-5"><p class="q">What gets wetter<br>the more it dries?</p><p class="a" data-show="5">A towel!</p></div>
+  <div data-only="6-7"><p class="q">What has a neck<br>but no head?</p><p class="a" data-show="7">A bottle!</p></div>
+  <div data-only="8-9"><p class="q">What has lots of keys<br>but can't open a door?</p><p class="a" data-show="9">A piano!</p></div>
+  <div data-only="10-11"><p class="q">What goes up<br>but never comes down?</p><p class="a" data-show="11">Your age!</p></div>
+  <div data-only="12-13"><p class="q">What has one eye<br>but can't see?</p><p class="a" data-show="13">A needle!</p></div>
+  <div data-only="14-15"><p class="q">What runs all day<br>but never walks?</p><p class="a" data-show="15">A river!</p></div>
+</section>
+
+<section class="slide center" data-title="Silent Simon" data-notes="No words at all. Do slow moves (touch your nose, pat your head, wave like seaweed) and the kids copy. Good while names get called.">
+  <p class="h">Silent Simon</p>
+  <p class="lead">Copy me.<br><span class="amber">No words.</span></p>
+</section>
+
+<section class="slide center" data-title="Goodnight" data-notes="Thunderous applause for the volunteers. Thunder! BOOM!">
+  <svg class="art" style="width:420px" viewBox="0 0 400 300" aria-hidden="true">
+    <path d="M236 36a124 124 0 1 0 120 168A104 104 0 0 1 236 36z" fill="#f5b54a"/>
+    <g fill="#8fb4ff">
+      <path d="M70 60l7 18 18 7-18 7-7 18-7-18-18-7 18-7z"/>
+      <path d="M340 50l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>
+      <path d="M60 220l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/>
+    </g>
+  </svg>
+  <h1 class="big">Goodnight, Thornhill!</h1>
+  <p class="sub">Thank you, Thunder Dads volunteers</p>
+</section>
+
+</div>
+
+<div class="progress" id="progress"></div>
+<div class="hint" id="hint">Arrows or clicker: next &middot; Space: start timer / flip Dance and Freeze &middot; F: full screen &middot; N: notes window</div>
+
+<script>
+(function () {
+  var deck = document.getElementById("deck");
+  var slides = [].slice.call(deck.querySelectorAll(".slide"));
+  var cur = 0, step = 0;
+
+  function maxStep(sl) {
+    var m = 0;
+    sl.querySelectorAll("[data-show],[data-on],[data-only]").forEach(function (e) {
+      var v = e.dataset.show || e.dataset.on || e.dataset.only.split("-")[1];
+      m = Math.max(m, +v);
+    });
+    return m;
+  }
+  function applyStep(sl, st) {
+    sl.querySelectorAll("[data-show]").forEach(function (e) { e.classList.toggle("pending", st < +e.dataset.show); });
+    sl.querySelectorAll("[data-only]").forEach(function (e) {
+      var p = e.dataset.only.split("-");
+      e.classList.toggle("gone", st < +p[0] || st > +p[1]);
+    });
+    sl.querySelectorAll("[data-on]").forEach(function (e) {
+      var k = +e.dataset.on;
+      e.classList.toggle("on", st === k);
+      e.classList.toggle("done", st > k);
+    });
+  }
+
+  if (/[?&]sheet/.test(location.search)) {
+    document.documentElement.classList.add("sheet");
+    slides.forEach(function (sl) {
+      var c = document.createElement("div");
+      c.className = "cell";
+      deck.insertBefore(c, sl);
+      c.appendChild(sl);
+      applyStep(sl, maxStep(sl));
+    });
+    return;
+  }
+
+  function fit() {
+    var s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    deck.style.transform = "translate(-50%, -50%) scale(" + s + ")";
+  }
+  addEventListener("resize", fit);
+  fit();
+
+  function fmt(n) { return Math.floor(n / 60) + ":" + ("0" + (n % 60)).slice(-2); }
+  function timerOf(sl) {
+    if (!sl._t) { var n = +sl.dataset.seconds; sl._t = { total: n, left: n, id: null }; }
+    return sl._t;
+  }
+  function drawTimer(sl) {
+    var t = timerOf(sl), box = sl.querySelector(".timer");
+    box.querySelector(".num").textContent = fmt(t.left);
+    box.classList.toggle("done", t.left === 0);
+    box.querySelector(".tlabel").textContent = t.left === 0 ? "Time's up!" : (t.id ? "to go" : "Ready?");
+  }
+  function toggleTimer(sl) {
+    var t = timerOf(sl);
+    if (t.left === 0) t.left = t.total;
+    if (t.id) { clearInterval(t.id); t.id = null; }
+    else {
+      t.id = setInterval(function () {
+        t.left = Math.max(0, t.left - 1);
+        if (t.left === 0) { clearInterval(t.id); t.id = null; }
+        drawTimer(sl);
+      }, 1000);
+    }
+    drawTimer(sl);
+  }
+
+  var progress = document.getElementById("progress");
+  function show(i, st) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, k) { s.classList.toggle("active", k === i); });
+    cur = i;
+    var sl = slides[i];
+    step = Math.max(0, Math.min(maxStep(sl), st || 0));
+    applyStep(sl, step);
+    if (sl.dataset.action === "timer") drawTimer(sl);
+    if (sl.dataset.action === "freeze") sl.classList.remove("frozen");
+    progress.style.width = ((cur + 1) / slides.length * 100) + "%";
+    try { history.replaceState(null, "", "#" + (cur + 1) + (step ? "." + step : "")); } catch (e) {}
+    renderNotes();
+  }
+  function next() {
+    if (step < maxStep(slides[cur])) show(cur, step + 1);
+    else if (cur < slides.length - 1) show(cur + 1, 0);
+  }
+  function prev() {
+    if (step > 0) show(cur, step - 1);
+    else if (cur > 0) show(cur - 1, maxStep(slides[cur - 1]));
+  }
+  function action() {
+    var sl = slides[cur];
+    if (sl.dataset.action === "timer") toggleTimer(sl);
+    else if (sl.dataset.action === "freeze") sl.classList.toggle("frozen");
+    else next();
+  }
+  function fullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(function () {});
+  }
+
+  var notesWin = null;
+  function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
+  function renderNotes() {
+    if (!notesWin || notesWin.closed) return;
+    var sl = slides[cur], nx = slides[cur + 1];
+    notesWin.document.body.innerHTML =
+      '<div style="font:20px/1.5 system-ui,sans-serif;padding:22px;background:#0b1120;color:#eef1f8;min-height:100vh;box-sizing:border-box">' +
+      '<div style="color:#f5b54a;font-weight:700">Slide ' + (cur + 1) + ' of ' + slides.length + ': ' + esc(sl.dataset.title) + (maxStep(sl) ? ' (step ' + step + ' of ' + maxStep(sl) + ')' : '') + '</div>' +
+      '<p style="font-size:24px">' + esc(sl.dataset.notes || "") + '</p>' +
+      '<div style="color:#9aa5c0">Next: ' + (nx ? esc(nx.dataset.title) : "End") + '</div>' +
+      '<p style="color:#9aa5c0;font-size:15px;margin-top:28px">Keys work in this window too. Set the display to Extend, not Mirror, or the room sees this window.</p></div>';
+  }
+  function openNotes() {
+    notesWin = window.open("", "kno-notes", "width=560,height=640");
+    if (!notesWin) return;
+    notesWin.document.title = "Kids Night Out notes";
+    notesWin.document.body.style.margin = "0";
+    notesWin.document.onkeydown = onKey;
+    renderNotes();
+  }
+
+  var wake = null;
+  function keepAwake() {
+    if (wake || !("wakeLock" in navigator)) return;
+    navigator.wakeLock.request("screen").then(function (l) { wake = l; l.addEventListener("release", function () { wake = null; }); }).catch(function () {});
+  }
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") keepAwake(); });
+
+  function onKey(e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    keepAwake();
+    switch (e.key) {
+      case "ArrowRight": case "ArrowDown": case "PageDown": case "Enter": next(); break;
+      case "ArrowLeft": case "ArrowUp": case "PageUp": case "Backspace": prev(); break;
+      case " ": action(); break;
+      case "f": case "F": fullscreen(); break;
+      case "n": case "N": openNotes(); break;
+      case "Home": show(0, 0); break;
+      case "End": show(slides.length - 1, 0); break;
+      default: return;
+    }
+    e.preventDefault();
+  }
+  document.addEventListener("keydown", onKey);
+  deck.addEventListener("click", function (e) {
+    keepAwake();
+    if (e.clientX < innerWidth * 0.2) prev(); else action();
+  });
+
+  var hint = document.getElementById("hint"), hideT = null, idleT = null;
+  function flashHint(ms) {
+    hint.classList.add("show");
+    document.body.classList.remove("idle");
+    clearTimeout(hideT); clearTimeout(idleT);
+    hideT = setTimeout(function () { hint.classList.remove("show"); }, ms);
+    idleT = setTimeout(function () { document.body.classList.add("idle"); }, ms + 500);
+  }
+  document.addEventListener("mousemove", function () { flashHint(2500); });
+  flashHint(6000);
+
+  function fromHash() {
+    var m = location.hash.match(/^#(\d+)(?:\.(\d+))?/);
+    show(m ? +m[1] - 1 : 0, m && m[2] ? +m[2] : 0);
+  }
+  addEventListener("hashchange", fromHash);
+  fromHash();
+})();
+</script>
+</body>
+</html>

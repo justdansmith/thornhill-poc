@@ -107,6 +107,7 @@ button.btn {
   font: inherit; font-size: 15px; font-weight: 700; padding: 10px 14px; cursor: pointer;
   background: var(--navy); color: var(--bg); border: 0; border-radius: 6px;
 }
+a.tlink { font-weight: 700; color: var(--navy); text-underline-offset: 3px; }
 button.link {
   font: inherit; font-size: 15px; font-weight: 700; padding: 4px 0; cursor: pointer;
   background: none; border: 0; color: var(--navy); text-decoration: underline; text-underline-offset: 3px;
@@ -166,13 +167,13 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
     <p class="eyebrow">Thunder Dads · Thornhill Elementary · MPR</p>
     <h1>Kids Night Out <span class="bolt">MC Script</span></h1>
     <p class="lede">Read the big lines out loud. Tap any row with a + to open it.</p>
-    <div class="toolbar"><span><b>SAY</b> read out loud</span><span><b class="dim">DO</b> stage direction</span><button class="link" id="toggleAll" type="button">Open all</button></div>
+    <div class="toolbar"><span><b>SAY</b> read out loud</span><span><b class="dim">DO</b> stage direction</span><button class="link" id="toggleAll" type="button">Open all</button><a class="tlink" href="slides/">Slides for the big screen</a></div>
   </div>
 </header>
 
 <nav class="jump" aria-label="Jump to section">
   <div class="wrap">
-    <a href="#tonight">Tonight</a><a href="#order">Order</a><a href="#jobs">Jobs</a><a href="#arrive">Arrival</a><a href="#welcome">Welcome</a><a href="#signal">Signal</a><a href="#rules">Rules</a><a href="#games">Games</a><a href="#jokes">Jokes</a><a href="#pizza">Pizza</a><a href="#movie">Movie</a><a href="#end">End games</a><a href="#pickup">Pickup</a><a href="#fixes">If it gets loud</a>
+    <a href="#tonight">Tonight</a><a href="#order">Order</a><a href="#jobs">Jobs</a><a href="#arrive">Arrival</a><a href="#welcome">Welcome</a><a href="#signal">Signal</a><a href="#rules">Rules</a><a href="#games">Games</a><a href="#jokes">Jokes</a><a href="#pizza">Pizza</a><a href="#movie">Movie</a><a href="#end">After movie</a><a href="#pickup">Pickup</a><a href="#fixes">If it gets loud</a>
   </div>
 </nav>
 
@@ -222,7 +223,7 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
     <tr><td>+35 min</td><td>Pizza and water, one row at a time</td></tr>
     <tr><td>+60 min</td><td>Jokes and Joke Mic while kids finish, cleanup, popcorn on</td></tr>
     <tr><td>+70 min</td><td>Popcorn out, Sleeping Lions, whisper countdown, movie</td></tr>
-    <tr><td>After movie</td><td>Art and quiet games on the sleeping bags while parents arrive</td></tr>
+    <tr><td>After movie</td><td>Burrito roll and parade to the stage, pizza box cleanup, dance, then quiet time while families sign out</td></tr>
     <tr><td>End</td><td>Pickup at <span class="fill" data-fill="pickup">[pickup time]</span></td></tr>
   </table>
 </section>
@@ -487,74 +488,63 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 </section>
 
 <section id="end">
-  <h2>End of the night</h2>
-  <p class="time">After the movie, while parents arrive. Kids leave one at a time, so everything here keeps going when a kid drops out.</p>
-  <div class="tip"><b>Two rules for the end.</b> Everyone stays on or beside their sleeping bag, and nothing flies. Balloon keepy-uppy got little kids hurt: kids chasing something overhead don't see each other.</div>
+  <h2>After the movie</h2>
+  <p class="time">Pack up, clean up, dance, then quiet time while families sign out. Each step has a slide.</p>
+  <div class="tip"><b>Nothing flies, all night.</b> Balloon keepy-uppy got little kids hurt: kids chasing something overhead don't see each other.</div>
 
-  <p class="group">Art projects · the best fit for pickup</p>
-  <p class="meta">A kid can leave mid-drawing and take it home. Paper and crayons only; skip scissors and glue in the dim light.</p>
+  <h3>1. Burrito roll and parade to the stage</h3>
+  <p class="meta">About 5 min · slides: Burrito time, Parade to the stage</p>
+  <div class="say"><span>Say</span><p>Lights up! Burrito time: roll your sleeping bag up tight and put your pillow on top. You've got one minute.</p></div>
+  <div class="say"><span>Say</span><p>When your sleeping bag color lights up on the screen, walk your burrito to the stage, set it down, and come back to the open floor.</p></div>
+
+  <h3>2. Pizza Box Monster cleanup</h3>
+  <p class="meta">2 min · slide: Pizza Box Monster</p>
+  <div class="do"><span>Do</span><p>Open the empty pizza boxes and hold them like monster mouths. Secretly pick one piece of trash as the Mystery Trash. Full boxes go straight in the trash.</p></div>
+  <div class="say"><span>Say</span><p>The Pizza Box Monsters are starving! Feed them napkins, cups, and popcorn. One piece of trash is the Mystery Trash, and whoever picks it up leads the dance. Two minutes. Go!</p></div>
+
+  <h3>3. Dance party</h3>
+  <p class="meta">5 to 10 min · slides: Freeze Dance, Dance like a...</p>
+  <div class="say"><span>Say</span><p>Our Mystery Trash finder is the dance leader! When the music stops, freeze!</p></div>
+
+  <h3>4. Quiet time while families sign out</h3>
+  <p class="meta">Until the last pickup · slides: Quiet time, Quiet riddles, Silent Simon</p>
+  <div class="say"><span>Say</span><p>Everybody sit down in front of the stage. When a helper calls your name, grab your stuff and meet your grown-up at sign-out. Everyone else whisper-waves goodbye.</p></div>
+
   <div class="stack">
     <details>
-      <summary><span class="sum"><b>Monster Mash-Up</b><small>Groups of three · all ages · one folded sheet</small></span></summary>
-      <div class="body">
-        <ol class="steps">
-          <li>Fold a sheet into three strips.</li>
-          <li>Kid one draws a head on the top strip, folds it out of sight, and passes it.</li>
-          <li>Kid two draws a body, folds, and passes. Kid three draws the legs.</li>
-          <li>Unfold, name the monster, and hold it up.</li>
-        </ol>
-        <div class="say"><span>Say</span><p>Nobody peeks! When you unfold it, you'll meet a monster nobody planned.</p></div>
-      </div>
+      <summary><span class="sum"><b>More pack-up ideas</b><small>Other ways to call kids up, lost items</small></span></summary>
+      <div class="body"><ul class="plain">
+        <li><b>Other ways to call groups.</b> By grade (TK and K first), by birthday month, or by the first letter of their name.</li>
+        <li><b>Lost Treasure sweep.</b> Thunder Captains check every spot for socks, water bottles, and stuffed animals. Anything found goes in a Lost Treasure pile on the stage.</li>
+        <li><b>Burrito check.</b> Before the parade, everyone sits on their burrito so you can spot the ones still unrolled.</li>
+      </ul></div>
     </details>
     <details>
-      <summary><span class="sum"><b>Draw Along</b><small>Everyone at once · you call it out</small></span></summary>
-      <div class="body">
-        <div class="say"><span>Say</span><p>Everybody draw a big circle. Give it two pointy ears. Now three eyes. A giant smile with one tooth. A bow tie. Now give your monster a name, and hold it up!</p></div>
-      </div>
+      <summary><span class="sum"><b>More cleanup ideas</b><small>Rows, little helpers, beat the clock</small></span></summary>
+      <div class="body"><ul class="plain">
+        <li><b>One monster per row.</b> Each row gets its own pizza box. The first row with a clean floor sits down and picks the first dance song.</li>
+        <li><b>Little helpers.</b> TK and K kids are the Monster Feeders; big kids hold the boxes and do the chomping.</li>
+        <li><b>Beat the clock.</b> When the timer ends, everyone freezes. Anything still on the floor gets a giant groan.</li>
+      </ul></div>
     </details>
     <details>
-      <summary><span class="sum"><b>Draw the Movie</b><small>All ages</small></span></summary>
-      <div class="body">
-        <div class="say"><span>Say</span><p>Draw your favorite part of tonight's movie. When you hold it up, everyone else guesses the scene.</p></div>
-      </div>
+      <summary><span class="sum"><b>Songs that run the dance for you</b><small>Line dances, littles, freeze</small></span></summary>
+      <div class="body"><ul class="plain">
+        <li><b>Cha Cha Slide and Cupid Shuffle</b> call out the moves, so the whole room moves together.</li>
+        <li><b>Hokey Pokey</b> for the littles.</li>
+        <li><b>Freeze Dance</b> with any song. Press Space on the slide to flip DANCE and FREEZE.</li>
+        <li><b>Dance like a...</b> The Mystery Trash finder picks the next move.</li>
+      </ul></div>
     </details>
     <details>
-      <summary><span class="sum"><b>Thank-You Notes</b><small>All ages · collect them at the door</small></span></summary>
-      <div class="body">
-        <div class="say"><span>Say</span><p>Draw a thank-you picture for the Thunder Dads who made pizza and popcorn tonight.</p></div>
-      </div>
-    </details>
-  </div>
-
-  <p class="group">Quiet games on the sleeping bags</p>
-  <div class="stack">
-    <details>
-      <summary><span class="sum"><b>Telephone</b><small>All ages · circle up</small></span></summary>
-      <div class="body"><p>Whisper "The purple dinosaur ate seventeen pickles" to the first kid and pass it around. The last kid says it out loud.</p></div>
-    </details>
-    <details>
-      <summary><span class="sum"><b>Story Circle</b><small>All ages · one sentence each</small></span></summary>
-      <div class="body"><div class="say"><span>Say</span><p>One night at Kids Night Out, a giant slice of pizza walked into the MPR and said...</p></div><p class="meta">Each kid adds one sentence.</p></div>
-    </details>
-    <details>
-      <summary><span class="sum"><b>Charades on your knees</b><small>All ages · guess from your spot</small></span></summary>
-      <div class="body"><p>Act out an animal, a job, or a movie character. Everyone guesses from their sleeping bag.</p></div>
-    </details>
-    <details>
-      <summary><span class="sum"><b>What Changed?</b><small>All ages · you're the puzzle</small></span></summary>
-      <div class="body"><p>One kid studies you, then turns around. Change one thing (take off a shoe, roll up a sleeve). The kid turns back and guesses.</p></div>
-    </details>
-    <details>
-      <summary><span class="sum"><b>Heads Up, Seven Up</b><small>K and up · heads down on pillows</small></span></summary>
-      <div class="body"><p>Heads down on pillows, thumbs up. Seven kids tiptoe the aisle and press one thumb each. Pressed kids guess who picked them.</p></div>
-    </details>
-    <details>
-      <summary><span class="sum"><b>Shadow Puppets</b><small>All ages · needs the projector</small></span></summary>
-      <div class="body"><p>If the projector can show a plain white screen, kids take turns making animals in the light. One kid at a time, with a grown-up beside the projector.</p></div>
-    </details>
-    <details>
-      <summary><span class="sum"><b>Vampire Wink</b><small>3rd grade and up · circle</small></span></summary>
-      <div class="body"><p>A secret vampire winks at people in the circle, and anyone winked at falls dramatically asleep on their pillow. Everyone else tries to spot the vampire.</p></div>
+      <summary><span class="sum"><b>More quiet sign-out activities</b><small>Riddles, Silent Simon, drawing, circle games</small></span></summary>
+      <div class="body"><ul class="plain">
+        <li><b>Quiet riddles.</b> Eight on the slides. Kids whisper a guess, then click to show the answer.</li>
+        <li><b>Silent Simon.</b> Do slow moves with no words, and the kids copy.</li>
+        <li><b>Draw Along.</b> "Draw a big circle. Two pointy ears. Three eyes. A giant smile with one tooth. A bow tie. Name your monster!"</li>
+        <li><b>Monster Mash-Up.</b> Fold paper in three. One kid draws a head, the next a body, the next the legs. Unfold and name it.</li>
+        <li><b>Telephone, Story Circle, What Changed?</b> All work sitting in front of the stage, and kids can leave mid-game.</li>
+      </ul></div>
     </details>
   </div>
 </section>
@@ -562,7 +552,7 @@ footer { color: var(--muted); font-size: 14px; padding-block: 0 40px; }
 <section id="pickup">
   <h2>Pickup and goodbye</h2>
   <p class="time">Pickup at <span class="fill" data-fill="pickup">[pickup time]</span></p>
-  <div class="say"><span>Say</span><p>Time to roll up your sleeping bags. Keep your pillow and bag together and sit on them. When your grown-up gets here, stay on your spot until a helper calls your name and checks you out. Nobody walks out alone.</p></div>
+  <div class="say"><span>Say</span><p>When a helper calls your name, grab your stuff from the stage and meet your grown-up at sign-out. Nobody walks out alone.</p></div>
   <div class="say"><span>Say</span><p>Before you go: let's give our volunteers some thunderous applause! Thunder! <span class="kids">BOOM!</span> Thanks for coming to Kids Night Out!</p></div>
 </section>
 
