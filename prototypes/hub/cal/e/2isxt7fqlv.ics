@@ -4,10 +4,10 @@ PRODID:-//Thornhill PFC//Hub prototype//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:3f1crkv2rd@thornhill-hub-prototype
-DTSTAMP:20261023T220837Z
-DTSTART:20270307T020000Z
-DTEND:20270307T070000Z
+UID:2isxt7fqlv@thornhill-hub-prototype
+DTSTAMP:20261028T182926Z
+DTSTART:20270321T010000Z
+DTEND:20270321T060000Z
 SUMMARY:Annual Auction and Benefit
 LOCATION:Thornhill Elementary
 DESCRIPTION:Details on Konstella: https://www.konstella.com/activity-detail

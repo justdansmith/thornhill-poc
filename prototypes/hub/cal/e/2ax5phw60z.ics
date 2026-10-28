@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2ax5phw60z@thornhill-hub-prototype
+DTSTAMP:20261028T182926Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Room 1 Halloween: costumes and class party
+LOCATION:Thornhill Elementary School
+DESCRIPTION:Costumes welcome. Party centers\, snacks\, a cookie\, and the m
+ ini-movie Room on the Broom in class\, then the parade at 1:30 PM. Familie
+ s enter through Gate A.
+END:VEVENT
+END:VCALENDAR
