@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Thornhill Email Audit | Thornhill PFC</title>
+<meta name="description" content="A year of Thornhill school messages counted from one family's inbox: who sends what, when it lands, and where it doubles up.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#ffffff;--sky:#eef3fb;--navy:#05397e;--gold:#fec322;--ink:#1f2933;--muted:#52606d;--line:#dfe4ea;--surface:#fcfcfb;--grid:#e6e8eb;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){color-scheme:dark;--bg:#121417;--sky:#1a2230;--navy:#9cc0f5;--gold:#fec322;--ink:#eceef1;--muted:#a9b2bd;--line:#2c333c;--surface:#1a1a19;--grid:#2b2f35;
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#121417;--sky:#1a2230;--navy:#9cc0f5;--gold:#fec322;--ink:#eceef1;--muted:#a9b2bd;--line:#2c333c;--surface:#1a1a19;--grid:#2b2f35;
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px;line-height:1.55;color:var(--ink);background:var(--bg)}
+a{color:var(--navy)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header{background:var(--sky);padding:44px 0 32px;border-bottom:4px solid var(--gold)}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin:0 0 10px}
+h1,h2{font-family:Montserrat,system-ui,sans-serif;color:var(--navy);letter-spacing:-.01em;line-height:1.15}
+h1{font-size:clamp(2rem,4.8vw,2.7rem);margin:0 0 14px;max-width:24ch}
+h2{font-size:clamp(1.3rem,3vw,1.6rem);margin:0 0 12px}
+.lead{font-size:1.15rem;color:var(--muted);margin:0;max-width:62ch}
+.for{margin:14px 0 0;font-size:.95rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:26px 0 0;border-top:1px solid var(--line)}
+.stats div{padding:14px 14px 4px 0}
+.stats b{display:block;font-family:Montserrat,system-ui,sans-serif;font-size:2rem;color:var(--navy);line-height:1.1}
+.stats span{font-size:.92rem;color:var(--muted)}
+section{padding:34px 0 10px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.num{font-family:Montserrat,system-ui,sans-serif;font-size:.85rem;color:var(--muted);margin:0 0 6px;letter-spacing:.06em}
+p{margin:0 0 12px}
+ul{margin:0 0 14px;padding-left:20px}li{margin:0 0 8px}
+.rule{border-left:3px solid var(--gold);padding:2px 0 2px 14px;margin:16px 0}
+.rule.navy{border-color:var(--navy)}
+.rule b{color:var(--navy)}
+.tw{overflow-x:auto;margin:8px 0 16px}
+table{width:100%;border-collapse:collapse;font-size:.98rem}
+th,td{padding:9px 10px 9px 0;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{border-top:0;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td:not(:last-child),th{white-space:nowrap}
+.num-t td:not(:first-child),.num-t th:not(:first-child){text-align:right}
+tfoot td,tfoot th{font-weight:700}
+.week td:last-child{white-space:normal}
+.k{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px;vertical-align:0}
+.s1{fill:var(--s1);background:var(--s1)}.s2{fill:var(--s2);background:var(--s2)}.s3{fill:var(--s3);background:var(--s3)}.s4{fill:var(--s4);background:var(--s4)}.s5{fill:var(--s5);background:var(--s5)}
+.chartbox{position:relative;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0 6px;margin:12px 0 10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.9rem;color:var(--muted);margin:0 0 6px}
+svg{width:100%;height:auto;display:block}
+.grid{stroke:var(--grid);stroke-width:1}
+.tick{fill:var(--muted);font-size:12px;font-family:"Source Sans 3",system-ui,sans-serif}
+.val{fill:var(--ink);font-size:12px;font-weight:700;font-family:"Source Sans 3",system-ui,sans-serif}
+.hit{fill:transparent;cursor:default}
+.hit:hover{fill:var(--ink);fill-opacity:.05}
+#tip{position:absolute;pointer-events:none;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:8px 10px;font-size:.85rem;line-height:1.4;min-width:220px;box-shadow:0 4px 14px rgba(0,0,0,.12);display:none;z-index:2}
+#tip b{display:block;margin-bottom:4px}#tip span{display:flex;align-items:center}#tip em{margin-left:auto;padding-left:14px;font-style:normal;font-weight:700}
+#tip .tt{border-top:1px solid var(--line);margin-top:4px;padding-top:4px}#tip .tt i{display:inline-block;width:18px}
+.small{font-size:.92rem;color:var(--muted)}
+.change{counter-reset:c;list-style:none;padding:0}
+.change li{border-left:3px solid var(--navy);padding:2px 0 2px 16px;margin:0 0 18px}
+.change li b{display:block;color:var(--navy)}
+footer{padding:26px 0 40px;font-size:.92rem;color:var(--muted)}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.wrap{padding:0 16px}h1{max-width:none}.week td,.week th{white-space:normal}.week td:nth-child(3){font-size:.85rem}th,td{padding-right:8px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<p class="eyebrow">Thornhill PFC communications</p>
+<h1>What one Thornhill family received in a year</h1>
+<p class="lead">Every post from the PFC, the school, the district, teachers, and aftercare that reached one Thornhill family from October 29, 2025 to October 28, 2026.</p>
+<p class="for">For Jon and Selam. From Dan.</p>
+<div class="stats">
+<div><b>702</b><span>posts in 12 months</span></div>
+<div><b>16</b><span>in the median school week, up to 23</span></div>
+<div><b>40</b><span>days with five or more</span></div>
+<div><b>48%</b><span>of ParentSquare posts came from the district</span></div>
+</div>
+</div></header>
+<main class="wrap">
+
+<section id="who">
+<p class="num">01</p>
+<h2>Who sends what</h2>
+<p>Five routes carry almost everything. The PFC, the school, and the district each send about a quarter. Teachers email families directly.</p>
+<div class="chartbox"><div class="legend"><span><i class="k s1"></i>Konstella, PFC and classes</span><span><i class="k s2"></i>School on ParentSquare</span><span><i class="k s3"></i>OUSD district on ParentSquare</span><span><i class="k s4"></i>Teachers by email</span><span><i class="k s5"></i>Aftercare and other</span></div><svg viewBox="0 0 708 276" role="img" aria-labelledby="ct cd"><title id="ct">Posts per month by route</title><desc id="cd">Stacked bars from November 2025 to October 2026. October 2026 runs through the 28th; November includes October 29 to 31, 2025.</desc><line x1="30" x2="708" y1="246" y2="246" class="grid"/><text x="26" y="250" class="tick" text-anchor="end">0</text><line x1="30" x2="708" y1="191" y2="191" class="grid"/><text x="26" y="195" class="tick" text-anchor="end">20</text><line x1="30" x2="708" y1="136" y2="136" class="grid"/><text x="26" y="140" class="tick" text-anchor="end">40</text><line x1="30" x2="708" y1="81" y2="81" class="grid"/><text x="26" y="85" class="tick" text-anchor="end">60</text><line x1="30" x2="708" y1="26" y2="26" class="grid"/><text x="26" y="30" class="tick" text-anchor="end">80</text><rect class="s1" x="47" y="215" width="34" height="31"/><rect class="s2" x="47" y="171" width="34" height="42"/><rect class="s3" x="47" y="105" width="34" height="64"/><rect class="s4" x="47" y="80.25" width="34" height="22.75"/><path class="s5" d="M47,78.25 V71.25 Q47,67.25 51,67.25 H77 Q81,67.25 81,71.25 V78.25 Z"/><text x="64" y="60.25" class="val" text-anchor="middle">65</text><text x="64" y="264" class="tick" text-anchor="middle">Nov</text><rect class="hit" x="36" y="26" width="56" height="224" data-tip="&lt;b&gt;Nov 2025&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;12&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;16&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;24&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;9&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;4&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;65&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="103" y="206.75" width="34" height="39.25"/><rect class="s2" x="103" y="182" width="34" height="22.75"/><rect class="s3" x="103" y="149" width="34" height="31"/><rect class="s4" x="103" y="138" width="34" height="9"/><path class="s5" d="M103,136 V126.25 Q103,122.25 107,122.25 H133 Q137,122.25 137,126.25 V136 Z"/><text x="120" y="115.25" class="val" text-anchor="middle">45</text><text x="120" y="264" class="tick" text-anchor="middle">Dec</text><rect class="hit" x="92" y="26" width="56" height="224" data-tip="&lt;b&gt;Dec 2025&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;15&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;9&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;12&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;4&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;5&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;45&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="159" y="193" width="34" height="53"/><rect class="s2" x="159" y="127" width="34" height="64"/><rect class="s3" x="159" y="94" width="34" height="31"/><rect class="s4" x="159" y="88.5" width="34" height="3.5"/><path class="s5" d="M159,86.5 V79.5 Q159,75.5 163,75.5 H189 Q193,75.5 193,79.5 V86.5 Z"/><text x="176" y="68.5" class="val" text-anchor="middle">62</text><text x="176" y="264" class="tick" text-anchor="middle">Jan</text><rect class="hit" x="148" y="26" width="56" height="224" data-tip="&lt;b&gt;Jan 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;20&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;24&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;12&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;2&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;4&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;62&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="215" y="184.75" width="34" height="61.24999999999999"/><rect class="s2" x="215" y="149" width="34" height="33.75"/><rect class="s3" x="215" y="110.5" width="34" height="36.5"/><rect class="s4" x="215" y="96.75" width="34" height="11.75"/><path class="s5" d="M215,94.75 V76.75 Q215,72.75 219,72.75 H245 Q249,72.75 249,76.75 V94.75 Z"/><text x="232" y="65.75" class="val" text-anchor="middle">63</text><text x="232" y="264" class="tick" text-anchor="middle">Feb</text><rect class="hit" x="204" y="26" width="56" height="224" data-tip="&lt;b&gt;Feb 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;23&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;13&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;14&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;5&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;8&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;63&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="271" y="198.5" width="34" height="47.5"/><rect class="s2" x="271" y="135.25" width="34" height="61.24999999999999"/><rect class="s3" x="271" y="105" width="34" height="28.250000000000004"/><rect class="s4" x="271" y="85.75" width="34" height="17.25"/><path class="s5" d="M271,83.75 V68.5 Q271,64.5 275,64.5 H301 Q305,64.5 305,68.5 V83.75 Z"/><text x="288" y="57.5" class="val" text-anchor="middle">66</text><text x="288" y="264" class="tick" text-anchor="middle">Mar</text><rect class="hit" x="260" y="26" width="56" height="224" data-tip="&lt;b&gt;Mar 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;18&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;23&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;11&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;7&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;7&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;66&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="327" y="209.5" width="34" height="36.5"/><rect class="s2" x="327" y="171" width="34" height="36.5"/><rect class="s3" x="327" y="110.5" width="34" height="58.50000000000001"/><rect class="s4" x="327" y="94" width="34" height="14.5"/><path class="s5" d="M327,92 V82.25 Q327,78.25 331,78.25 H357 Q361,78.25 361,82.25 V92 Z"/><text x="344" y="71.25" class="val" text-anchor="middle">61</text><text x="344" y="264" class="tick" text-anchor="middle">Apr</text><rect class="hit" x="316" y="26" width="56" height="224" data-tip="&lt;b&gt;Apr 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;14&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;14&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;22&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;6&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;5&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;61&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="383" y="198.5" width="34" height="47.5"/><rect class="s2" x="383" y="140.75" width="34" height="55.75"/><rect class="s3" x="383" y="77.5" width="34" height="61.24999999999999"/><rect class="s4" x="383" y="50" width="34" height="25.5"/><path class="s5" d="M383,48 V30 Q383,26 387,26 H413 Q417,26 417,30 V48 Z"/><text x="400" y="19" class="val" text-anchor="middle">80</text><text x="400" y="264" class="tick" text-anchor="middle">May</text><rect class="hit" x="372" y="26" width="56" height="224" data-tip="&lt;b&gt;May 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;18&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;21&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;23&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;10&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;8&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;80&lt;/em&gt;&lt;/span&gt;"/><rect class="s3" x="439" y="215" width="34" height="31"/><path class="s4" d="M439,213 V211.5 Q439,207.5 443,207.5 H469 Q473,207.5 473,211.5 V213 Z"/><text x="456" y="200.5" class="val" text-anchor="middle">14</text><text x="456" y="264" class="tick" text-anchor="middle">Jun</text><rect class="hit" x="428" y="26" width="56" height="224" data-tip="&lt;b&gt;Jun 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;0&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;0&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;12&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;2&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;0&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;14&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="495" y="239.75" width="34" height="6.25"/><rect class="s2" x="495" y="215" width="34" height="22.75"/><rect class="s3" x="495" y="182" width="34" height="31"/><path class="s4" d="M495,180 V178.5 Q495,174.5 499,174.5 H525 Q529,174.5 529,178.5 V180 Z"/><text x="512" y="167.5" class="val" text-anchor="middle">26</text><text x="512" y="264" class="tick" text-anchor="middle">Jul</text><rect class="hit" x="484" y="26" width="56" height="224" data-tip="&lt;b&gt;Jul 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;3&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;9&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;12&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;2&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;0&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;26&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="551" y="206.75" width="34" height="39.25"/><rect class="s2" x="551" y="146.25" width="34" height="58.50000000000001"/><rect class="s3" x="551" y="105" width="34" height="39.25"/><path class="s4" d="M551,103 V71.25 Q551,67.25 555,67.25 H581 Q585,67.25 585,71.25 V103 Z"/><text x="568" y="60.25" class="val" text-anchor="middle">65</text><text x="568" y="264" class="tick" text-anchor="middle">Aug</text><rect class="hit" x="540" y="26" width="56" height="224" data-tip="&lt;b&gt;Aug 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;15&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;22&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;15&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;13&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;0&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;65&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="607" y="184.75" width="34" height="61.24999999999999"/><rect class="s2" x="607" y="116" width="34" height="66.75"/><rect class="s3" x="607" y="61" width="34" height="53"/><path class="s4" d="M607,59 V38.25 Q607,34.25 611,34.25 H637 Q641,34.25 641,38.25 V59 Z"/><text x="624" y="27.25" class="val" text-anchor="middle">77</text><text x="624" y="264" class="tick" text-anchor="middle">Sep</text><rect class="hit" x="596" y="26" width="56" height="224" data-tip="&lt;b&gt;Sep 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;23&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;25&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;20&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;9&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;0&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;77&lt;/em&gt;&lt;/span&gt;"/><rect class="s1" x="663" y="187.5" width="34" height="58.50000000000001"/><rect class="s2" x="663" y="113.25" width="34" height="72.25"/><rect class="s3" x="663" y="77.5" width="34" height="33.75"/><rect class="s4" x="663" y="41.75" width="34" height="33.75"/><path class="s5" d="M663,39.75 V35.5 Q663,31.5 667,31.5 H693 Q697,31.5 697,35.5 V39.75 Z"/><text x="680" y="24.5" class="val" text-anchor="middle">78</text><text x="680" y="264" class="tick" text-anchor="middle">Oct</text><rect class="hit" x="652" y="26" width="56" height="224" data-tip="&lt;b&gt;Oct 2026&lt;/b&gt;&lt;span&gt;&lt;i class=&quot;k s1&quot;&gt;&lt;/i&gt;Konstella, PFC and classes&lt;em&gt;22&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s2&quot;&gt;&lt;/i&gt;School on ParentSquare&lt;em&gt;27&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s3&quot;&gt;&lt;/i&gt;OUSD district on ParentSquare&lt;em&gt;13&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s4&quot;&gt;&lt;/i&gt;Teachers by email&lt;em&gt;13&lt;/em&gt;&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;k s5&quot;&gt;&lt;/i&gt;Aftercare and other&lt;em&gt;3&lt;/em&gt;&lt;/span&gt;&lt;span class=&quot;tt&quot;&gt;&lt;i&gt;&lt;/i&gt;Total&lt;em&gt;78&lt;/em&gt;&lt;/span&gt;"/></svg><div id="tip" role="tooltip"></div></div>
+<p class="small">Posts per month. October runs through the 28th.</p>
+<div class="tw"><table class="num-t">
+<thead><tr><th>Route</th><th>Posts</th><th>Share</th><th>Median words</th><th>Sent 6 PM to 7 AM</th></tr></thead>
+<tbody><tr><th scope="row"><i class="k s1"></i>Konstella, PFC and classes</th><td>183</td><td>26%</td><td>159</td><td>27%</td></tr><tr><th scope="row"><i class="k s2"></i>School on ParentSquare</th><td>203</td><td>29%</td><td>151</td><td>28%</td></tr><tr><th scope="row"><i class="k s3"></i>OUSD district on ParentSquare</th><td>190</td><td>27%</td><td>381</td><td>4%</td></tr><tr><th scope="row"><i class="k s4"></i>Teachers by email</th><td>82</td><td>12%</td><td>155</td><td>17%</td></tr><tr><th scope="row"><i class="k s5"></i>Aftercare and other</th><td>44</td><td>6%</td><td>444</td><td>32%</td></tr></tbody>
+<tfoot><tr><th scope="row">All routes</th><td>702</td><td>100%</td><td></td><td>20%</td></tr></tfoot>
+</table></div>
+<ul>
+<li><b>Konstella:</b> the Thornhill Communications account posted 129 of them and the PFC President 14. Committee chairs and room parents posted the rest.</li>
+<li><b>School on ParentSquare:</b> the front office posted 98, Jalyn Crum 45 (community flyers and the PFC newsletter), Principal Scott 30, and the school account 23.</li>
+<li><b>Teachers:</b> our children's teachers wrote by email. One teacher post came through ParentSquare all year.</li>
+</ul>
+</section>
+
+<section id="double">
+<p class="num">02</p>
+<h2>Where it doubles up</h2>
+<div class="rule"><b>The newsletter goes out twice.</b> It ran 38 times on Konstella and was reposted on ParentSquare in 30 of those weeks: 68 sends for 38 issues. Selam's explanation on October 13: Konstella has never reached every family, so the office reposts to reach the rest.</div>
+<div class="rule"><b>Konstella delivers many posts twice.</b> 97 of 183 Konstella posts arrived when posted and again in the Saturday weekly summary.</div>
+<div class="rule"><b>Repeats under the same title.</b> 54 posts repeated a title from the same route within three weeks. "New additional minimum days" went out 6 times on ParentSquare.</div>
+<div class="rule"><b>One event, several routes.</b> Halloween plans came in 8 posts from 4 routes. Minimum-day and no-school changes took 20 posts.</div>
+</section>
+
+<section id="week">
+<p class="num">03</p>
+<h2>The busiest week</h2>
+<p>The week of August 31, 2026 brought 23 posts, the week the Annual Fund opened. Two attendance notices about our own child are left off this list.</p>
+<div class="tw"><table class="week">
+<thead><tr><th>Day</th><th>Time</th><th>Route</th><th>Subject</th></tr></thead>
+<tbody><tr><td>Mon Aug 31</td><td>10 AM</td><td><i class="k s1"></i>Konstella, PFC and classes</td><td>[Thornhill] Neurodiverse Students &amp; Families Advisory Group- Join Us!</td></tr><tr><td>Mon Aug 31</td><td>11 AM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Neurodiverse Students and Families Advisory Group</td></tr><tr><td>Mon Aug 31</td><td>11 AM</td><td><i class="k s1"></i>Konstella, PFC and classes</td><td>[Thornhill] ThornChill Fall Festival Kickoff Planning Meeting</td></tr><tr><td>Mon Aug 31</td><td>4 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Join Our Lit for Literacy Parent Leader Team!</td></tr><tr><td>Tue Sep 1</td><td>8 AM</td><td><i class="k s3"></i>OUSD district on ParentSquare</td><td>Your Voice Matters: Join Tomorrow’s Community Meeting! 🗣️ Interpretation &amp;…</td></tr><tr><td>Tue Sep 1</td><td>10 AM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Lost &amp; Found Items Cleared This Friday</td></tr><tr><td>Tue Sep 1</td><td>11 AM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Action Needed: Emergency Comfort Packs &amp; Important Aeries Update</td></tr><tr><td>Tue Sep 1</td><td>12 PM</td><td><i class="k s3"></i>OUSD district on ParentSquare</td><td>&lt;Important&gt; The School Year Is Well Underway. Please Protect Your Health and…</td></tr><tr><td>Tue Sep 1</td><td>2 PM</td><td><i class="k s1"></i>Konstella, PFC and classes</td><td>[Thornhill] PFC Newsletter, September 1, 2026</td></tr><tr><td>Tue Sep 1</td><td>3 PM</td><td><i class="k s4"></i>Teachers by email</td><td>Mid Week Updates</td></tr><tr><td>Tue Sep 1</td><td>4 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Thornhill Elementary PFC Newsletter Volume 34, Issue 4, September 1, 2026</td></tr><tr><td>Tue Sep 1</td><td>6 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Your Vote Needed: Special PFC Meeting Thursday 9/3</td></tr><tr><td>Wed Sep 2</td><td>6 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>*NEW additional minimum days*</td></tr><tr><td>Thu Sep 3</td><td>1 AM</td><td><i class="k s1"></i>Konstella, PFC and classes</td><td>Today's Notifications at Thornhill Elementary 9/3</td></tr><tr><td>Thu Sep 3</td><td>11 AM</td><td><i class="k s1"></i>Konstella, PFC and classes</td><td>[Thornhill] The Annual Fund Drive is LIVE! Donate Today!</td></tr><tr><td>Thu Sep 3</td><td>5 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Your Vote Needed: Special PFC Meeting Thursday 9/3</td></tr><tr><td>Thu Sep 3</td><td>6 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Independent Studies</td></tr><tr><td>Fri Sep 4</td><td>8 AM</td><td><i class="k s3"></i>OUSD district on ParentSquare</td><td>Engaging OUSD: Superintendent's Spotlight | OUSD MSEG | YES! Sports Expo |…</td></tr><tr><td>Fri Sep 4</td><td>6 PM</td><td><i class="k s2"></i>School on ParentSquare</td><td>Understanding Attendance Policy - Every day counts!</td></tr><tr><td>Sat Sep 5</td><td>9 AM</td><td><i class="k s3"></i>OUSD district on ParentSquare</td><td>Reading is JOY: Family Read Aloud Guides</td></tr><tr><td>Sun Sep 6</td><td>3 PM</td><td><i class="k s4"></i>Teachers by email</td><td>Room 2 Newsletter #5 (9/8-9/11) (SEE COLOR WEEKS ANNOUNCEMENT)</td></tr></tbody>
+</table></div>
+</section>
+
+<section id="when">
+<p class="num">04</p>
+<h2>When it lands</h2>
+<p>142 posts (20%) arrived between 6 PM and 7 AM, and 70 (10%) on a weekend. The district posts in the daytime: 4% of its posts land in the evening. PFC and school posts do so 27% and 28% of the time.</p>
+<p>Konstella stacked up on 39 days, with up to 4 posts in one day (February 12, 2026).</p>
+</section>
+
+<section id="district">
+<p class="num">05</p>
+<h2>The district's share</h2>
+<p>OUSD sent 190 posts through ParentSquare, 27% of everything. Its posts run long, with a median of 381 words against about 151 for the school, so the district wrote 47% of all the words a family received.</p>
+<p>All routes together came to 211,000 words. At 200 to 250 words a minute, that is 14 to 18 hours of reading a year.</p>
+</section>
+
+<section id="fall">
+<p class="num">06</p>
+<h2>This fall against last fall</h2>
+<p>From August 1 to October 28, volume held steady: 213 posts in 2025 and 220 in 2026. The school's ParentSquare posts rose while the district's fell.</p>
+<div class="tw"><table class="num-t">
+<thead><tr><th>Route</th><th>2025</th><th>2026</th><th>Change</th></tr></thead>
+<tbody><tr><th scope="row"><i class="k s1"></i>Konstella, PFC and classes</th><td>64</td><td>60</td><td>-4</td></tr><tr><th scope="row"><i class="k s2"></i>School on ParentSquare</th><td>64</td><td>74</td><td>+10</td></tr><tr><th scope="row"><i class="k s3"></i>OUSD district on ParentSquare</th><td>60</td><td>48</td><td>-12</td></tr><tr><th scope="row"><i class="k s4"></i>Teachers by email</th><td>24</td><td>35</td><td>+11</td></tr><tr><th scope="row"><i class="k s5"></i>Aftercare and other</th><td>1</td><td>3</td><td>+2</td></tr></tbody>
+<tfoot><tr><th scope="row">All routes</th><td>213</td><td>220</td><td>+7</td></tr></tfoot>
+</table></div>
+<p class="small">Teacher email depends on which teachers a family has, so that row reflects our classrooms.</p>
+</section>
+
+<section id="change">
+<p class="num">07</p>
+<h2>What we could change</h2>
+<p>Within the three areas Jon scoped (the newsletter, Konstella, and the website), plus one ask of the office:</p>
+<ol class="change">
+<li><b>Newsletter: every two weeks, posted once on the website.</b> Konstella and ParentSquare each carry a short pointer to it. Every two weeks takes 68 sends a year to about 34.</li>
+<li><b>Konstella: one schedule, one post a day.</b> Annie holds the calendar (Selam's step one). Stacked days carried 49 posts beyond the first; those move to the next open day or into the newsletter.</li>
+<li><b>Konstella: tell families about the weekly summary.</b> Each family picks instant posts or the Saturday summary, instead of getting both for 97 posts.</li>
+<li><b>Website: one page per date and event.</b> Minimum days, no-school days, and events live on one calendar families subscribe to, and every post links there. This year minimum days took 20 posts, and Halloween plans came from 4 routes.</li>
+<li><b>Send before 6 PM.</b> Evening drafts go out the next morning. About one PFC or school post in four lands after 6 PM today.</li>
+<li><b>Ask the office about the district.</b> District posts are 47% of the reading. Ask Principal Scott what the school can do about district volume, and show families the ParentSquare Digest setting from the <a href="../comms/index.html">October 23 ideas</a>.</li>
+</ol>
+<div class="rule navy"><b>Take it further:</b> rerun this count every quarter with two or three volunteer families adding their inboxes, and report the four headline numbers at each board meeting.</div>
+</section>
+
+<section id="method">
+<p class="num">08</p>
+<h2>How this was counted</h2>
+<ul class="small">
+<li>One parent's Gmail, read only, on October 28, 2026: 1,330 threads from Konstella, ParentSquare, @ousd.org staff, JCC aftercare, and PFC fundraising tools.</li>
+<li>A post is one announcement. ParentSquare daily digests and Konstella weekly summaries were opened and their posts counted once each; 188 posts reached the inbox only inside a digest.</li>
+<li>Left out: 14 receipts, invoices, sign-up confirmations, and password resets; family and personal email; board-role notices.</li>
+<li>Limits: one family, its classrooms, and its notification settings. WhatsApp groups, texts, paper flyers, and Aeries are not counted. Times are when a post was sent.</li>
+</ul>
+</section>
+</main>
+<footer><div class="wrap">Thornhill PFC, Website Admin. Built October 28, 2026.</div></footer>
+<script>
+(()=>{const tip=document.getElementById('tip'),box=tip.parentElement;
+document.querySelectorAll('.hit').forEach(h=>{
+h.addEventListener('mouseenter',()=>{tip.innerHTML=h.dataset.tip;tip.style.display='block'});
+h.addEventListener('mousemove',e=>{const r=box.getBoundingClientRect();let x=e.clientX-r.left+14;if(x+tip.offsetWidth>r.width)x=e.clientX-r.left-tip.offsetWidth-14;tip.style.left=Math.max(0,x)+'px';tip.style.top=(e.clientY-r.top-10)+'px'});
+h.addEventListener('mouseleave',()=>{tip.style.display='none'});});})();
+</script>
+</body>
+</html>
