@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:1q4r8dpjd1@thornhill-hub-prototype
+DTSTAMP:20261104T182648Z
+DTSTART;VALUE=DATE:20270125
+DTEND;VALUE=DATE:20270206
+SUMMARY:Read-a-thon
+LOCATION:Thornhill Elementary School\, 5880 Thornhill Dr\, Oakland\, CA 946
+ 11
+DESCRIPTION:Thornhill's Read-a-thon runs January 25 to February 5\, with th
+ e Read & Feed on Wednesday\, January 27.
+END:VEVENT
+END:VCALENDAR

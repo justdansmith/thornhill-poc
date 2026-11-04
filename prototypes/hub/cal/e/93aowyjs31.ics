@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:93aowyjs31@thornhill-hub-prototype
+DTSTAMP:20261104T182648Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+SUMMARY:Make-up Picture Day
+LOCATION:Thornhill Elementary School\, 5880 Thornhill Dr\, Oakland\, CA 946
+ 11
+DESCRIPTION:Order on mylifetouch.com with Picture Day ID EVTKFRQC9. Order b
+ efore midnight on Picture Day for free shipping.
+END:VEVENT
+END:VCALENDAR

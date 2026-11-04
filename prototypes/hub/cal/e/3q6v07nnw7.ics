@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Thornhill PFC//Hub prototype//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:3q6v07nnw7@thornhill-hub-prototype
+DTSTAMP:20261104T182648Z
+DTSTART:20261114T180000Z
+DTEND:20261114T220000Z
+SUMMARY:Thornhill Fall Sweep and Planting Day
+LOCATION:Thornhill Elementary School\, 5880 Thornhill Dr\, Oakland\, CA 946
+ 11
+DESCRIPTION:Weed\, plant\, and sweep the campus together\, kids welcome. Th
+ e sign-up sheet is linked in the November 3 PFC newsletter.
+END:VEVENT
+END:VCALENDAR
